@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ meta_title }}{% endblock %}
+
+{% block content %}
+<section class="page-hero reveal">
+    <div class="container page-hero-grid">
+        <div>
+            <p class="eyebrow">{{ service.category.title }}</p>
+            <h1>{{ service.name }}</h1>
+            {% if service.short_description %}<p class="lead">{{ service.short_description }}</p>{% endif %}
+            <p class="lead price-lead">A partir de {{ service.from_price_label }}</p>
+            {% if service.booking_url %}
+                <a class="btn btn-booking" href="{{ service.booking_url }}" target="_blank" rel="noreferrer noopener"><span class="icon-calendar" aria-hidden="true"></span>Reserver ce soin</a>
+            {% elif site_settings and site_settings.booking_url %}
+                <a class="btn btn-booking" href="{{ site_settings.booking_url }}" target="_blank" rel="noreferrer noopener"><span class="icon-calendar" aria-hidden="true"></span>{{ site_settings.booking_label|default:"Prendre rendez-vous" }}</a>
+            {% endif %}
+        </div>
+        {% if service.image %}
+            <img src="{{ service.image.url }}" alt="{{ service.name }}">
+        {% endif %}
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container content-narrow rich-text">
+        {{ service.details_html|safe }}
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container content-narrow">
+        <div class="section-head">
+            <p class="eyebrow">Tarifs de ce soin</p>
+            <h2>Options disponibles</h2>
+        </div>
+        <div class="tariff-blocks">
+            {% for tariff in tariffs %}
+                <article class="tariff-chip-card tariff-chip-card-accent">
+                    {% if tariff.image %}
+                        <div class="tariff-image">
+                            <img src="{{ tariff.image.url }}" alt="{{ tariff.label }}" loading="lazy" />
+                        </div>
+                    {% endif %}
+                    <header class="tariff-head">
+                        <h4>{{ tariff.label }}</h4>
+                        {% if tariff.promo_price_label %}
+                            <strong><span class="price-old">{{ tariff.price_label }}</span> <span class="price-new">{{ tariff.promo_price_label }}</span></strong>
+                        {% else %}
+                            <strong>{{ tariff.price_label }}</strong>
+                        {% endif %}
+                    </header>
+                    {% if tariff.duration_text %}
+                        <p class="tariff-duration">{{ tariff.duration_text }}</p>
+                    {% endif %}
+                    {% if tariff.details_html %}
+                        <div class="rich-text tariff-rich">{{ tariff.details_html|safe }}</div>
+                    {% elif tariff.notes %}
+                        <p>{{ tariff.notes|linebreaksbr }}</p>
+                    {% endif %}
+                </article>
+            {% empty %}
+                <article class="tariff-chip-card">
+                    <h4>Tarif</h4>
+                    <p>Ajoutez les options de prix dans l'admin.</p>
+                    <strong>Sur demande</strong>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% if siblings %}
+<section class="section section-alt reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Explorer</p>
+            <h2>Autres soins de {{ service.category.title }}</h2>
+        </div>
+        <div class="services-grid">
+            {% for sibling in siblings %}
+                <article class="service-card service-card-rich">
+                    <h3><a href="{{ sibling.get_absolute_url }}">{{ sibling.name }}</a></h3>
+                    <p>{{ sibling.short_description|truncatechars:130 }}</p>
+                    <ul class="tariff-list">
+                        {% for tariff in sibling.prefetched_tariffs|slice:":2" %}
+                            <li>
+                                <span>{{ tariff.label }}</span>
+                                {% if tariff.promo_price_label %}
+                                    <strong><span class="price-old">{{ tariff.price_label }}</span> <span class="price-new">{{ tariff.promo_price_label }}</span></strong>
+                                {% else %}
+                                    <strong>{{ tariff.price_label }}</strong>
+                                {% endif %}
+                            </li>
+                        {% empty %}
+                            <li><span>Tarif</span><strong>{{ sibling.from_price_label }}</strong></li>
+                        {% endfor %}
+                    </ul>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock %}

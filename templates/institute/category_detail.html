@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ meta_title }}{% endblock %}
+
+{% block content %}
+<section class="page-hero reveal">
+    <div class="container page-hero-grid">
+        <div>
+            <p class="eyebrow">Categorie</p>
+            <h1>{{ category.title }}</h1>
+            {% if category.short_intro %}<p class="lead">{{ category.short_intro }}</p>{% endif %}
+        </div>
+        {% if category.cover_image %}
+            <img src="{{ category.cover_image.url }}" alt="{{ category.title }}">
+        {% endif %}
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container content-narrow rich-text">
+        {{ category.body_html|safe }}
+    </div>
+</section>
+
+<section class="section section-alt reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Parcours de soins</p>
+        </div>
+        <div class="care-stack">
+            {% for service in services %}
+                <article class="care-card">
+                    <div class="care-card-main">
+                        <div class="care-card-thumb">
+                            {% if service.image %}
+                                <img src="{{ service.image.url }}" alt="{{ service.name }}">
+                            {% else %}
+                                <div class="card-image-fallback" aria-hidden="true"></div>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <div class="care-card-head">
+                                <h3><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></h3>
+                            </div>
+                            {% if service.short_description %}<p>{{ service.short_description }}</p>{% endif %}
+                            <p class="service-meta"><span>A partir de</span><strong class="care-price">{{ service.from_price_label }}</strong></p>
+                            <p><a class="btn btn-outline" href="{{ service.get_absolute_url }}">Voir details et options</a></p>
+                        </div>
+                    </div>
+                </article>
+            {% empty %}
+                <p>Aucun soin publie dans cette categorie.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% if category.cta_url %}
+<section class="section reveal">
+    <div class="container cta-block">
+        <h2>{{ category.title }}</h2>
+        <a class="btn btn-booking" href="{{ category.cta_url }}" target="_blank" rel="noreferrer noopener"><span class="icon-calendar" aria-hidden="true"></span>{{ category.cta_label|default:"Reserver ce soin" }}</a>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

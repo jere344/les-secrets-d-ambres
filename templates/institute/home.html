@@ -1,0 +1,388 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero hero-rich reveal">
+    <div class="hero-cover-media" aria-hidden="true">
+        {% if settings_obj and settings_obj.hero_image %}
+            <img src="{{ settings_obj.hero_image.url }}" alt="{{ settings_obj.hero_title|default:'Ambiance institut Les secrets d\'ambre' }}">
+        {% else %}
+            <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1800&q=80" alt="Ambiance institut et soins de beauté">
+        {% endif %}
+    </div>
+    <div class="hero-cover-shade" aria-hidden="true"></div>
+    <div class="container hero-cover-content">
+        <div class="hero-copy">
+            <p class="eyebrow">Montpellier - institut beaute & bien-etre</p>
+            <h1>{{ settings_obj.hero_title|default:"Rituels de beaute orientale, version contemporaine" }}</h1>
+            <p class="lead">{{ settings_obj.hero_subtitle|default:"Categories de soins lisibles, prestations detaillees et tarifs clairs pour une experience haut de gamme." }}</p>
+            <div class="hero-actions">
+                {% if settings_obj and settings_obj.booking_url %}
+                    <a class="btn btn-booking" href="{{ settings_obj.booking_url }}" target="_blank" rel="noreferrer noopener">
+                        <span class="icon-calendar" aria-hidden="true"></span>
+                        {{ settings_obj.booking_label|default:"Prendre rendez-vous" }}
+                    </a>
+                {% endif %}
+                {% if settings_obj and settings_obj.contact_phone_display %}
+                    <a class="btn btn-outline" href="tel:{{ settings_obj.contact_phone|default:settings_obj.contact_phone_display }}">{{ settings_obj.contact_phone_display }}</a>
+                {% endif %}
+            </div>
+            <div class="hero-stats">
+                <article>
+                    <strong>100%</strong>
+                    <span>soins personnalisables</span>
+                </article>
+            </div>
+        </div>
+        <div class="hero-badge">
+            <span class="hero-badge-title">{{ settings_obj.brand_name|default:"Les secrets d'ambre" }}</span>
+            <span class="hero-badge-sub">{{ settings_obj.tagline|default:"Institut de beaute bio a Montpellier" }}</span>
+        </div>
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container ritual-flow">
+        {% for point in ritual_points %}
+            <article class="ritual-line {% if forloop.counter0|divisibleby:2 %}left{% else %}right{% endif %}">
+                <i class="{{ point.icon_class|default:'bi bi-stars' }}"></i>
+                <div>
+                    <h3>{{ point.title }}</h3>
+                    <p>{{ point.text }}</p>
+                </div>
+            </article>
+        {% empty %}
+            <article class="ritual-line left">
+                <i class="bi bi-stars"></i>
+                <div>
+                    <h3>Ajoutez vos rituels dans l'admin</h3>
+                    <p>Section parametree depuis l'administration avec titre, texte et icone.</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">L'experience institut</p>
+            <h2>Tout ce qu'une cliente moderne attend</h2>
+        </div>
+        <div class="services-grid">
+            <article class="service-card service-card-rich">
+                <h3>Diagnostic et personnalisation</h3>
+                <p>Chaque parcours est adapte a la peau, au ressenti et au besoin du moment. La hierarchie categorie -> soin -> tarifs simplifie la decision.</p>
+            </article>
+            <article class="service-card service-card-rich">
+                <h3>Reservation fluide</h3>
+                <p>Prise de rendez-vous directe avec bouton flottant, contact telephone permanent et informations pratiques accessibles en un clic.</p>
+            </article>
+            <article class="service-card service-card-rich">
+                <h3>Ambiance orientale contemporaine</h3>
+                <p>Direction artistique premium, motifs texturaux, couleurs chaudes et transitions douces pour une experience visuelle immersive.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Espace libre</p>
+        </div>
+        <div class="flex-lab">
+            {% for block in flexible_sections %}
+                <article class="flex-block {% if forloop.counter0|divisibleby:2 %}left{% else %}right{% endif %}">
+                    <div class="flex-block-copy">
+                        <h3>{{ block.title }}</h3>
+                        {% if block.subtitle %}<p class="service-category">{{ block.subtitle }}</p>{% endif %}
+                        {% if block.body_html %}
+                            <div class="rich-text">{{ block.body_html|safe }}</div>
+                        {% endif %}
+                        {% if block.cta_label and block.cta_url %}
+                            <p><a class="btn btn-outline" href="{{ block.cta_url }}">{{ block.cta_label }}</a></p>
+                        {% endif %}
+                    </div>
+                    <div class="flex-block-media">
+                        {% if block.video_embed_url %}
+                            <iframe
+                                src="{{ block.video_embed_url }}"
+                                title="{{ block.title }}"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen
+                            ></iframe>
+                        {% elif block.image %}
+                            <img src="{{ block.image.url }}" alt="{{ block.title }}">
+                        {% elif block.external_image_url %}
+                            <img src="{{ block.external_image_url }}" alt="{{ block.title }}">
+                        {% else %}
+                            <div class="flex-placeholder">
+                                <p>Espace reserve a vos futurs medias (images, videos, contenus speciaux).</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </article>
+            {% empty %}
+                <article class="flex-block left">
+                    <div class="flex-block-copy">
+                        <h3>Ajoutez une section libre</h3>
+                        <p>Depuis l'admin, creez un bloc avec texte et media pour personnaliser la home sans intervention technique.</p>
+                    </div>
+                    <div class="flex-block-media">
+                        <div class="flex-placeholder">
+                            <p>Image ou video a venir.</p>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% if certifications %}
+<section class="section section-alt reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Confiance & engagement</p>
+            <h2>Certifications, qualite et expertise</h2>
+            <p class="lead">{{ settings_obj.certification_label|default:"Institut reconnu pour son approche naturelle et personnalisee." }}</p>
+        </div>
+        {% with first_cert=certifications|first %}
+            <div class="cert-showcase" data-cert-showcase>
+                <div class="cert-feature">
+                    <a
+                        class="cert-feature-link"
+                        href="{{ first_cert.website_url|default:'#' }}"
+                        {% if first_cert.website_url %}target="_blank" rel="noreferrer noopener"{% endif %}
+                        data-cert-feature-link
+                    >
+                        <img
+                            src="{% if first_cert.image %}{{ first_cert.image.url }}{% elif first_cert.external_image_url %}{{ first_cert.external_image_url }}{% else %}https://dummyimage.com/980x560/f1cf8f/5a2b1f&text={{ first_cert.name|urlencode }}{% endif %}"
+                            alt="{{ first_cert.name }}"
+                            data-cert-feature-image
+                        >
+                    </a>
+                    <div class="cert-feature-meta">
+                        <h3 data-cert-feature-title>{{ first_cert.name }}</h3>
+                        <p data-cert-feature-description>{{ first_cert.description }}</p>
+                    </div>
+                </div>
+                <div class="cert-thumbs" aria-label="Liste des certifications">
+                    {% for cert in certifications %}
+                        <button
+                            class="cert-thumb {% if forloop.first %}is-active{% endif %}"
+                            type="button"
+                            data-cert-thumb
+                            data-title="{{ cert.name }}"
+                            data-description="{{ cert.description }}"
+                            data-link="{{ cert.website_url|default:'#' }}"
+                            data-image="{% if cert.image %}{{ cert.image.url }}{% elif cert.external_image_url %}{{ cert.external_image_url }}{% else %}https://dummyimage.com/980x560/f1cf8f/5a2b1f&text={{ cert.name|urlencode }}{% endif %}"
+                        >
+                            {% if cert.image %}
+                                <img src="{{ cert.image.url }}" alt="{{ cert.name }}">
+                            {% elif cert.external_image_url %}
+                                <img src="{{ cert.external_image_url }}" alt="{{ cert.name }}">
+                            {% else %}
+                                <span>{{ cert.name }}</span>
+                            {% endif %}
+                        </button>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endwith %}
+        {% if settings_obj and settings_obj.referral_offer_text %}
+            <p class="muted cert-note">{{ settings_obj.referral_offer_text }}</p>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+
+{% if partner_cloud %}
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Partenaires</p>
+            <h2>Nos collaborations</h2>
+        </div>
+        <div class="partner-cloud" aria-label="Partenaires de l'institut">
+            {% for node in partner_cloud %}
+                <a
+                    class="partner-node"
+                    href="{{ node.partner.website_url|default:'#' }}"
+                    data-top="{{ node.top }}"
+                    data-left="{{ node.left }}"
+                    data-rotation="{{ node.rotation }}"
+                    data-size="{{ node.size }}"
+                    {% if node.partner.website_url %}target="_blank" rel="noreferrer noopener"{% endif %}
+                >
+                    {% if node.partner.image %}
+                        <img src="{{ node.partner.image.url }}" alt="{{ node.partner.name }}">
+                    {% elif node.partner.external_image_url %}
+                        <img src="{{ node.partner.external_image_url }}" alt="{{ node.partner.name }}">
+                    {% else %}
+                        <span>{{ node.partner.name }}</span>
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Selection premium</p>
+            <h2>Soins mis en avant</h2>
+        </div>
+        <div class="services-grid">
+            {% for service in featured_services %}
+                <article class="service-card service-card-rich">
+                    <p class="service-category">{{ service.category.title }}</p>
+                    <h3><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></h3>
+                    {% if service.short_description %}
+                        <p>{{ service.short_description|truncatechars:150 }}</p>
+                    {% endif %}
+                    <ul class="tariff-list">
+                        {% for tariff in service.prefetched_tariffs|slice:":3" %}
+                            <li>
+                                <span>{{ tariff.label }}</span>
+                                {% if tariff.promo_price_label %}
+                                    <strong><span class="price-old">{{ tariff.price_label }}</span> <span class="price-new">{{ tariff.promo_price_label }}</span></strong>
+                                {% else %}
+                                    <strong>{{ tariff.price_label }}</strong>
+                                {% endif %}
+                            </li>
+                        {% empty %}
+                            <li><span>Tarif</span><strong>{{ service.from_price_label }}</strong></li>
+                        {% endfor %}
+                    </ul>
+                </article>
+            {% empty %}
+                <p>Ajoutez des soins "phares" dans l'admin pour les afficher ici.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Nos categories</p>
+        </div>
+        <div class="cards-grid cards-grid-rich">
+            {% for category in categories %}
+                <article class="card card-luxury">
+                    <a href="{{ category.get_absolute_url }}" class="card-link">
+                        <div class="card-image-wrap">
+                            {% if category.cover_image %}
+                                <img src="{{ category.cover_image.url }}" alt="{{ category.title }}">
+                            {% else %}
+                                <div class="card-image-fallback" aria-hidden="true"></div>
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            <h3>{{ category.title }}</h3>
+                            {% if category.short_intro %}
+                                <p>{{ category.short_intro|truncatechars:165 }}</p>
+                            {% endif %}
+                            <ul class="service-preview">
+                                {% for service in category.services.all|slice:":2" %}
+                                    <li>
+                                        <span>{{ service.name }}</span>
+                                        <strong>{{ service.from_price_label }}</strong>
+                                    </li>
+                                {% empty %}
+                                    <li><span>Contenu en cours d'ajout</span></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </a>
+                </article>
+            {% empty %}
+                <p>Aucune categorie n'est publiee pour le moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Galerie institut</p>
+            <h2>Ambiance et savoir-faire en images</h2>
+        </div>
+        <div class="legacy-gallery">
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/ia290007d220e8ba4/version/1386884562/image.jpg" alt="Epilation et soins">
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/i23ba30c7955d1483/version/1386884451/image.jpg" alt="Institut beaute Montpellier">
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/icdb2745799a359be/version/1386884503/image.jpg" alt="Soins corps et visage">
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/ifd64d20cb9ccb4f9/version/1386853254/hammam-sauna-montpellier-pour-un-moment-de-plaisir-seul-e-ou-%C3%A0-deux.jpg" alt="Hammam et sauna">
+        </div>
+    </div>
+</section>
+
+{% if highlight_pages %}
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Informations</p>
+            <h2>Vos pages utiles</h2>
+        </div>
+        <div class="page-grid">
+            {% for page in highlight_pages %}
+                <a class="page-card page-card-rich page-card-link" href="{{ page.get_absolute_url }}">
+                    <h3>{{ page.title }}</h3>
+                    {% if page.summary %}<p>{{ page.summary|truncatechars:170 }}</p>{% endif %}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if testimonials %}
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Temoignages</p>
+            <h2>Elles racontent leur experience</h2>
+        </div>
+        <div class="testimonials-grid">
+            {% for testimonial in testimonials %}
+                <article class="testimonial-bubble">
+                    <div class="testimonial-stars" aria-label="{{ testimonial.stars }} etoiles">
+                        {% for _ in "12345" %}
+                            <span class="{% if forloop.counter <= testimonial.stars %}is-filled{% endif %}">★</span>
+                        {% endfor %}
+                    </div>
+                    <p>{{ testimonial.text }}</p>
+                    <footer>{{ testimonial.name }}</footer>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<section class="section reveal">
+    <div class="container practical-grid">
+        <div class="service-card service-card-rich">
+            <p class="eyebrow">Infos pratiques</p>
+            <h3>Nous trouver a Montpellier</h3>
+            {% if settings_obj and settings_obj.address_line %}<p>{{ settings_obj.address_line }}</p>{% endif %}
+            {% if settings_obj and settings_obj.postal_code_city %}<p>{{ settings_obj.postal_code_city }}</p>{% endif %}
+            {% if settings_obj and settings_obj.gps_notice %}<p>{{ settings_obj.gps_notice }}</p>{% endif %}
+            {% if settings_obj and settings_obj.opening_hours %}<p>{{ settings_obj.opening_hours }}</p>{% endif %}
+        </div>
+        <div class="map-frame-wrap">
+            <iframe
+                title="{{ settings_obj.map_title|default:'Carte de localisation' }}"
+                src="{{ settings_obj.map_embed_url|default:'https://www.openstreetmap.org/export/embed.html?bbox=3.8794%2C43.6147%2C3.8875%2C43.6202&layer=mapnik&marker=43.6174%2C3.8834' }}"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+    </div>
+</section>
+{% endblock %}

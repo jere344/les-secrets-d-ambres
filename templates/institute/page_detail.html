@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ meta_title }}{% endblock %}
+
+{% block content %}
+<section class="page-hero reveal">
+    <div class="container page-hero-grid">
+        <div>
+            <p class="eyebrow">Information</p>
+            <h1>{{ page.title }}</h1>
+            {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+        </div>
+        {% if page.hero_image %}
+            <img src="{{ page.hero_image.url }}" alt="{{ page.title }}">
+        {% endif %}
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container content-narrow rich-text">
+        {{ page_body_html|safe }}
+    </div>
+</section>
+{% endblock %}

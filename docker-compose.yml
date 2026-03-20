@@ -1,0 +1,22 @@
+services:
+  web:
+    build: .
+    container_name: secretambre-web
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_DEBUG: "0"
+      DJANGO_SECRET_KEY: "change-this-secret-key"
+      DJANGO_ALLOWED_HOSTS: "localhost,127.0.0.1"
+      DJANGO_CSRF_TRUSTED_ORIGINS: "http://localhost:8000"
+      SQLITE_PATH: "/data/db.sqlite3"
+    volumes:
+      - sqlite_data:/data
+      - media_data:/app/media
+      - ./backups:/app/backups # Dossier pour extraire les backups sur la machine hôte
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:
+  media_data:
+  media_data:
