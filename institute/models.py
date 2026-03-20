@@ -313,3 +313,39 @@ class StandalonePage(models.Model):
 
 	def get_absolute_url(self):
 		return reverse("page-detail", kwargs={"slug": self.slug})
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True, verbose_name="Nom du tag")
+    slug = models.SlugField(max_length=50, unique=True)
+
+    class Meta:
+        ordering = ["name"]
+        verbose_name = "Tag"
+        verbose_name_plural = "Tags"
+
+    def __str__(self):
+        return self.name
+
+class BlogPost(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Titre de l'article")
+    slug = models.SlugField(max_length=200, unique=True)
+    image = models.ImageField(upload_to="blog/", blank=True, verbose_name="Image de couverture")
+    summary = models.TextField(blank=True, verbose_name="Résumé rapide")
+    content = models.TextField(verbose_name="Contenu de l'article")
+    tags = models.ManyToManyField(Tag, blank=True, related_name="posts", verbose_name="Tags associés")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    is_published = models.BooleanField(default=True, verbose_name="Publié")
+
+    objects = PublishedQuerySet.as_manager()
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "Article de blog"
+        verbose_name_plural = "Articles de blog"
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog_detail', kwargs={'slug': self.slug})

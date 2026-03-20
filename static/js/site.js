@@ -121,6 +121,17 @@ if (certShowcase) {
             }
         });
     });
+
+    // Auto rotate
+    let certIndex = 0;
+    let certInterval = setInterval(() => {
+        certIndex = (certIndex + 1) % certThumbs.length;
+        if (certThumbs[certIndex]) {
+            certThumbs[certIndex].click();
+        }
+    }, 5000);
+
+    certShowcase.addEventListener('mouseenter', () => clearInterval(certInterval));
 }
 
 if ("IntersectionObserver" in window) {

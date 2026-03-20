@@ -12,6 +12,8 @@ from .models import (
 	StandalonePage,
 	Tariff,
 	Testimonial,
+	Tag,
+	BlogPost,
 )
 
 
@@ -305,3 +307,18 @@ class StandalonePageAdmin(SummernoteModelAdmin):
 			{"fields": ("seo_title", "seo_description", "seo_keywords")},
 		),
 	)
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    prepopulated_fields = {'slug': ('name',)}
+
+@admin.register(BlogPost)
+class BlogPostAdmin(SummernoteModelAdmin):
+    list_display = ('title', 'created_at', 'is_published')
+    list_filter = ('is_published', 'tags')
+    search_fields = ('title', 'summary')
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('content',)
+    filter_horizontal = ('tags',)

@@ -1,0 +1,5 @@
+<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+    <!-- Delicate floating petal/leaf with a drop -->
+    <path d="M15 2 C20 10 25 15 15 25 C5 15 10 10 15 2 Z" fill="rgba(219, 181, 107, 0.4)"/>
+    <circle cx="15" cy="20" r="2" fill="#cc8400" />
+</svg>

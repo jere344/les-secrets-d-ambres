@@ -1,0 +1,6 @@
+<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+    <!-- Outer interconnected circle loops -->
+    <path d="M30 0 A 30 30 0 0 1 60 30 A 30 30 0 0 1 30 60 A 30 30 0 0 1 0 30 A 30 30 0 0 1 30 0 Z" fill="none" stroke="#dbb56b" stroke-width="0.5" stroke-opacity="0.15"/>
+    <!-- Inner interlaced curve -->
+    <path d="M30 15 A 15 15 0 0 1 45 30 A 15 15 0 0 1 30 45 A 15 15 0 0 1 15 30 A 15 15 0 0 1 30 15 Z" fill="none" stroke="#dbb56b" stroke-width="0.5" stroke-opacity="0.15"/>
+</svg>

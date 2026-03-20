@@ -3,9 +3,11 @@ import random
 from django.db.models import Prefetch
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-from django.views.generic import DetailView, TemplateView
+from django.views.generic import DetailView, TemplateView, ListView
 
 from .models import (
+    BlogPost,
+    Tag,
 	Category,
 	Certification,
 	HomeFlexibleSection,
@@ -88,6 +90,7 @@ class HomeView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
+		context['latest_posts'] = BlogPost.objects.all()[:3]
 		settings_obj = SiteSettings.get_solo()
 		tariff_prefetch = Prefetch(
 			"tariffs",
@@ -264,3 +267,39 @@ def robots_txt(_request):
 		"Sitemap: /sitemap.xml",
 	]
 	return HttpResponse("\n".join(lines), content_type="text/plain")
+
+
+class BlogListView(ListView):
+    model = BlogPost
+    template_name = "institute/blog_list.html"
+    context_object_name = "posts"
+    paginate_by = 12
+
+    def get_queryset(self):
+        qs = BlogPost.objects.published().prefetch_related('tags')
+        tag_slug = self.request.GET.get('tag')
+        if tag_slug:
+            qs = qs.filter(tags__slug=tag_slug)
+        return qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["all_tags"] = Tag.objects.all()
+        context["current_tag"] = self.request.GET.get('tag')
+        context["meta_title"] = "Le Blog - Les secrets d'ambre"
+        return context
+
+class BlogDetailView(DetailView):
+    model = BlogPost
+    template_name = "institute/blog_detail.html"
+    context_object_name = "post"
+
+    def get_queryset(self):
+        return BlogPost.objects.published().prefetch_related('tags')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["meta_title"] = f"{self.object.title} - Les secrets d'ambre"
+        if self.object.summary:
+            context["meta_description"] = self.object.summary
+        return context

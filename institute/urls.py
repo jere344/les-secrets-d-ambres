@@ -1,6 +1,8 @@
 from django.urls import path
 
 from .views import (
+    BlogListView,
+    BlogDetailView,
     CategoryDetailView,
     HomeView,
     ServiceDetailView,
@@ -16,4 +18,6 @@ urlpatterns = [
         name="service-detail",
     ),
     path("page/<slug:slug>/", StandalonePageDetailView.as_view(), name="page-detail"),
+    path("blog/", BlogListView.as_view(), name="blog_list"),
+    path("blog/<slug:slug>/", BlogDetailView.as_view(), name="blog_detail"),
 ]

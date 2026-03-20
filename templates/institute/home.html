@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<section class="hero hero-rich reveal">
+<section class="hero hero-rich reveal" style="position: relative; overflow: hidden;">
+    <!-- Floating Petal Decorations -->
+    <img src="{% static 'svg/floating-petal.svg' %}" alt="" style="position: absolute; top: 15%; left: 10%; width: 40px; animation: float-petal 12s infinite alternate ease-in-out; z-index: 10; opacity: 0.7;">
+    <img src="{% static 'svg/floating-petal.svg' %}" alt="" style="position: absolute; top: 40%; right: 15%; width: 30px; animation: float-petal 16s infinite alternate-reverse ease-in-out; z-index: 10; opacity: 0.5; transform: rotate(45deg);">
+    <img src="{% static 'svg/floating-petal.svg' %}" alt="" style="position: absolute; bottom: 20%; left: 25%; width: 50px; animation: float-petal 14s infinite alternate ease-in-out; z-index: 10; opacity: 0.6; transform: rotate(-30deg);">
+    <!-- End Decorations -->
+    
     <div class="hero-cover-media" aria-hidden="true">
         {% if settings_obj and settings_obj.hero_image %}
             <img src="{{ settings_obj.hero_image.url }}" alt="{{ settings_obj.hero_title|default:'Ambiance institut Les secrets d\'ambre' }}">
@@ -13,6 +20,11 @@
     <div class="container hero-cover-content">
         <div class="hero-copy">
             <p class="eyebrow">Montpellier - institut beaute & bien-etre</p>
+            
+            
+            <div class="hero-royal-crest" aria-hidden="true" style="margin-bottom: 2rem; width: 128px; height: 128px; text-align: left;">
+                <img src="{% static 'svg/oriental-rose-crest.svg' %}" alt="Oriental Rose Crest" style="width: 100%; height: 100%;">
+            </div>
             <h1>{{ settings_obj.hero_title|default:"Rituels de beaute orientale, version contemporaine" }}</h1>
             <p class="lead">{{ settings_obj.hero_subtitle|default:"Categories de soins lisibles, prestations detaillees et tarifs clairs pour une experience haut de gamme." }}</p>
             <div class="hero-actions">
@@ -27,10 +39,11 @@
                 {% endif %}
             </div>
             <div class="hero-stats">
-                <article>
-                    <strong>100%</strong>
-                    <span>soins personnalisables</span>
-                </article>
+                <nav class="hero-category-nav">
+                    {% for category in nav_categories %}
+                        <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+                    {% endfor %}
+                </nav>
             </div>
         </div>
         <div class="hero-badge">
@@ -39,196 +52,6 @@
         </div>
     </div>
 </section>
-
-<section class="section reveal">
-    <div class="container ritual-flow">
-        {% for point in ritual_points %}
-            <article class="ritual-line {% if forloop.counter0|divisibleby:2 %}left{% else %}right{% endif %}">
-                <i class="{{ point.icon_class|default:'bi bi-stars' }}"></i>
-                <div>
-                    <h3>{{ point.title }}</h3>
-                    <p>{{ point.text }}</p>
-                </div>
-            </article>
-        {% empty %}
-            <article class="ritual-line left">
-                <i class="bi bi-stars"></i>
-                <div>
-                    <h3>Ajoutez vos rituels dans l'admin</h3>
-                    <p>Section parametree depuis l'administration avec titre, texte et icone.</p>
-                </div>
-            </article>
-        {% endfor %}
-    </div>
-</section>
-
-<section class="section reveal">
-    <div class="container">
-        <div class="section-head">
-            <p class="eyebrow">L'experience institut</p>
-            <h2>Tout ce qu'une cliente moderne attend</h2>
-        </div>
-        <div class="services-grid">
-            <article class="service-card service-card-rich">
-                <h3>Diagnostic et personnalisation</h3>
-                <p>Chaque parcours est adapte a la peau, au ressenti et au besoin du moment. La hierarchie categorie -> soin -> tarifs simplifie la decision.</p>
-            </article>
-            <article class="service-card service-card-rich">
-                <h3>Reservation fluide</h3>
-                <p>Prise de rendez-vous directe avec bouton flottant, contact telephone permanent et informations pratiques accessibles en un clic.</p>
-            </article>
-            <article class="service-card service-card-rich">
-                <h3>Ambiance orientale contemporaine</h3>
-                <p>Direction artistique premium, motifs texturaux, couleurs chaudes et transitions douces pour une experience visuelle immersive.</p>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="section reveal">
-    <div class="container">
-        <div class="section-head">
-            <p class="eyebrow">Espace libre</p>
-        </div>
-        <div class="flex-lab">
-            {% for block in flexible_sections %}
-                <article class="flex-block {% if forloop.counter0|divisibleby:2 %}left{% else %}right{% endif %}">
-                    <div class="flex-block-copy">
-                        <h3>{{ block.title }}</h3>
-                        {% if block.subtitle %}<p class="service-category">{{ block.subtitle }}</p>{% endif %}
-                        {% if block.body_html %}
-                            <div class="rich-text">{{ block.body_html|safe }}</div>
-                        {% endif %}
-                        {% if block.cta_label and block.cta_url %}
-                            <p><a class="btn btn-outline" href="{{ block.cta_url }}">{{ block.cta_label }}</a></p>
-                        {% endif %}
-                    </div>
-                    <div class="flex-block-media">
-                        {% if block.video_embed_url %}
-                            <iframe
-                                src="{{ block.video_embed_url }}"
-                                title="{{ block.title }}"
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"
-                                allowfullscreen
-                            ></iframe>
-                        {% elif block.image %}
-                            <img src="{{ block.image.url }}" alt="{{ block.title }}">
-                        {% elif block.external_image_url %}
-                            <img src="{{ block.external_image_url }}" alt="{{ block.title }}">
-                        {% else %}
-                            <div class="flex-placeholder">
-                                <p>Espace reserve a vos futurs medias (images, videos, contenus speciaux).</p>
-                            </div>
-                        {% endif %}
-                    </div>
-                </article>
-            {% empty %}
-                <article class="flex-block left">
-                    <div class="flex-block-copy">
-                        <h3>Ajoutez une section libre</h3>
-                        <p>Depuis l'admin, creez un bloc avec texte et media pour personnaliser la home sans intervention technique.</p>
-                    </div>
-                    <div class="flex-block-media">
-                        <div class="flex-placeholder">
-                            <p>Image ou video a venir.</p>
-                        </div>
-                    </div>
-                </article>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-{% if certifications %}
-<section class="section section-alt reveal">
-    <div class="container">
-        <div class="section-head">
-            <p class="eyebrow">Confiance & engagement</p>
-            <h2>Certifications, qualite et expertise</h2>
-            <p class="lead">{{ settings_obj.certification_label|default:"Institut reconnu pour son approche naturelle et personnalisee." }}</p>
-        </div>
-        {% with first_cert=certifications|first %}
-            <div class="cert-showcase" data-cert-showcase>
-                <div class="cert-feature">
-                    <a
-                        class="cert-feature-link"
-                        href="{{ first_cert.website_url|default:'#' }}"
-                        {% if first_cert.website_url %}target="_blank" rel="noreferrer noopener"{% endif %}
-                        data-cert-feature-link
-                    >
-                        <img
-                            src="{% if first_cert.image %}{{ first_cert.image.url }}{% elif first_cert.external_image_url %}{{ first_cert.external_image_url }}{% else %}https://dummyimage.com/980x560/f1cf8f/5a2b1f&text={{ first_cert.name|urlencode }}{% endif %}"
-                            alt="{{ first_cert.name }}"
-                            data-cert-feature-image
-                        >
-                    </a>
-                    <div class="cert-feature-meta">
-                        <h3 data-cert-feature-title>{{ first_cert.name }}</h3>
-                        <p data-cert-feature-description>{{ first_cert.description }}</p>
-                    </div>
-                </div>
-                <div class="cert-thumbs" aria-label="Liste des certifications">
-                    {% for cert in certifications %}
-                        <button
-                            class="cert-thumb {% if forloop.first %}is-active{% endif %}"
-                            type="button"
-                            data-cert-thumb
-                            data-title="{{ cert.name }}"
-                            data-description="{{ cert.description }}"
-                            data-link="{{ cert.website_url|default:'#' }}"
-                            data-image="{% if cert.image %}{{ cert.image.url }}{% elif cert.external_image_url %}{{ cert.external_image_url }}{% else %}https://dummyimage.com/980x560/f1cf8f/5a2b1f&text={{ cert.name|urlencode }}{% endif %}"
-                        >
-                            {% if cert.image %}
-                                <img src="{{ cert.image.url }}" alt="{{ cert.name }}">
-                            {% elif cert.external_image_url %}
-                                <img src="{{ cert.external_image_url }}" alt="{{ cert.name }}">
-                            {% else %}
-                                <span>{{ cert.name }}</span>
-                            {% endif %}
-                        </button>
-                    {% endfor %}
-                </div>
-            </div>
-        {% endwith %}
-        {% if settings_obj and settings_obj.referral_offer_text %}
-            <p class="muted cert-note">{{ settings_obj.referral_offer_text }}</p>
-        {% endif %}
-    </div>
-</section>
-{% endif %}
-
-{% if partner_cloud %}
-<section class="section reveal">
-    <div class="container">
-        <div class="section-head">
-            <p class="eyebrow">Partenaires</p>
-            <h2>Nos collaborations</h2>
-        </div>
-        <div class="partner-cloud" aria-label="Partenaires de l'institut">
-            {% for node in partner_cloud %}
-                <a
-                    class="partner-node"
-                    href="{{ node.partner.website_url|default:'#' }}"
-                    data-top="{{ node.top }}"
-                    data-left="{{ node.left }}"
-                    data-rotation="{{ node.rotation }}"
-                    data-size="{{ node.size }}"
-                    {% if node.partner.website_url %}target="_blank" rel="noreferrer noopener"{% endif %}
-                >
-                    {% if node.partner.image %}
-                        <img src="{{ node.partner.image.url }}" alt="{{ node.partner.name }}">
-                    {% elif node.partner.external_image_url %}
-                        <img src="{{ node.partner.external_image_url }}" alt="{{ node.partner.name }}">
-                    {% else %}
-                        <span>{{ node.partner.name }}</span>
-                    {% endif %}
-                </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-{% endif %}
 
 <section class="section reveal">
     <div class="container">
@@ -310,6 +133,100 @@
 <section class="section reveal">
     <div class="container">
         <div class="section-head">
+            <p class="eyebrow">L'experience institut</p>
+            <h2>Tout ce qu'une cliente moderne attend</h2>
+        </div>
+        <div class="services-grid">
+            <article class="service-card service-card-rich">
+                <h3>Diagnostic et personnalisation</h3>
+                <p>Chaque parcours est adapte a la peau, au ressenti et au besoin du moment. La hierarchie categorie -> soin -> tarifs simplifie la decision.</p>
+            </article>
+            <article class="service-card service-card-rich">
+                <h3>Reservation fluide</h3>
+                <p>Prise de rendez-vous directe avec bouton flottant, contact telephone permanent et informations pratiques accessibles en un clic.</p>
+            </article>
+            <article class="service-card service-card-rich">
+                <h3>Ambiance orientale contemporaine</h3>
+                <p>Direction artistique premium, motifs texturaux, couleurs chaudes et transitions douces pour une experience visuelle immersive.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container ritual-flow">
+        {% for point in ritual_points %}
+            <article class="ritual-line {% if forloop.counter0|divisibleby:2 %}left{% else %}right{% endif %}">
+                <div class="ritual-icon-wrapper" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+                    <img src="{% static 'svg/arabesque-pattern.svg' %}" style="position: absolute; width: 100%; height: 100%; opacity: 0.5;">
+                    <i class="{{ point.icon_class|default:'bi bi-stars' }}" style="font-size: 1.5rem; color: var(--gold); z-index: 1;"></i>
+                </div>
+                <div>
+                    <h3>{{ point.title }}</h3>
+                    <p>{{ point.text }}</p>
+                </div>
+            </article>
+        {% empty %}
+            <article class="ritual-line left">
+                <div class="ritual-icon-wrapper" style="position: relative; display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px;">
+                    <img src="{% static 'svg/arabesque-pattern.svg' %}" style="position: absolute; width: 100%; height: 100%; opacity: 0.5;">
+                    <i class="bi bi-stars" style="font-size: 1.5rem; color: var(--gold); z-index: 1;"></i>
+                </div>
+                <div>
+                    <h3>Ajoutez vos rituels dans l'admin</h3>
+                    <p>Section parametree depuis l'administration avec titre, texte et icone.</p>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head text-center" style="text-align: center; margin-bottom: 2.5rem;">
+            <p class="eyebrow">Le Journal</p>
+            <h2>Actualités et conseils</h2>
+        </div>
+        
+        <div class="blog-grid mb-2">
+            {% for post in latest_posts %}
+                <article class="card card-luxury blog-card">
+                    <a href="{{ post.get_absolute_url }}" class="card-link">
+                        <div class="card-image-wrap">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                            {% else %}
+                                <div class="card-image-fallback"></div>
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            <span class="blog-date">{{ post.created_at|date:"d F Y" }}</span>
+                            <h3>{{ post.title }}</h3>
+                            {% if post.summary %}
+                                <p>{{ post.summary|truncatechars:100 }}</p>
+                            {% endif %}
+                            <div class="blog-tags">
+                                {% for tag in post.tags.all %}
+                                    <span class="blog-tag">#{{ tag.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            {% empty %}
+                <p style="text-align: center; width: 100%;">Restez à l'affût, nos articles arrivent bientôt.</p>
+            {% endfor %}
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="{% url 'blog_list' %}" class="btn btn-outline" style="border-color: var(--gold); color: var(--gold);">Voir tous les articles</a>
+        </div>
+    </div>
+</section>
+
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
             <p class="eyebrow">Galerie institut</p>
             <h2>Ambiance et savoir-faire en images</h2>
         </div>
@@ -341,6 +258,39 @@
 </section>
 {% endif %}
 
+{% if partner_cloud %}
+<section class="section reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Partenaires</p>
+            <h2>Nos collaborations</h2>
+        </div>
+        <div class="partner-marquee">
+            <div class="marquee-content">
+                {% for node in partner_cloud %}
+                    <a class="marquee-item" href="{{ node.partner.website_url|default:'#' }}">
+                        {% if node.partner.image %}
+                            <img src="{{ node.partner.image.url }}" alt="{{ node.partner.name }}">
+                        {% else %}
+                            <span>{{ node.partner.name }}</span>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+                {% for node in partner_cloud %}
+                    <a class="marquee-item" href="{{ node.partner.website_url|default:'#' }}">
+                        {% if node.partner.image %}
+                            <img src="{{ node.partner.image.url }}" alt="{{ node.partner.name }}">
+                        {% else %}
+                            <span>{{ node.partner.name }}</span>
+                        {% endif %}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
 {% if testimonials %}
 <section class="section reveal">
     <div class="container">
@@ -365,11 +315,77 @@
 </section>
 {% endif %}
 
+{% if certifications %}
+<section class="section section-alt reveal">
+    <div class="container">
+        <div class="section-head">
+            <p class="eyebrow">Confiance & engagement</p>
+            <h2>Certifications, qualite et expertise</h2>
+            <p class="lead">{{ settings_obj.certification_label|default:"Institut reconnu pour son approche naturelle et personnalisee." }}</p>
+        </div>
+        {% with first_cert=certifications|first %}
+            <div class="cert-showcase" data-cert-showcase>
+                <div class="cert-feature">
+                    <a
+                        class="cert-feature-link"
+                        href="{{ first_cert.website_url|default:'#' }}"
+                        {% if first_cert.website_url %}target="_blank" rel="noreferrer noopener"{% endif %}
+                        data-cert-feature-link
+                    >
+                        <img
+                            src="{% if first_cert.image %}{{ first_cert.image.url }}{% elif first_cert.external_image_url %}{{ first_cert.external_image_url }}{% else %}https://dummyimage.com/980x560/f1cf8f/5a2b1f&text={{ first_cert.name|urlencode }}{% endif %}"
+                            alt="{{ first_cert.name }}"
+                            data-cert-feature-image
+                        >
+                    </a>
+                    <div class="cert-feature-meta">
+                        <h3 data-cert-feature-title>{{ first_cert.name }}</h3>
+                        <p data-cert-feature-description>{{ first_cert.description }}</p>
+                    </div>
+                </div>
+                <div class="cert-thumbs" aria-label="Liste des certifications">
+                    {% for cert in certifications %}
+                        <button
+                            class="cert-thumb {% if forloop.first %}is-active{% endif %}"
+                            type="button"
+                            data-cert-thumb
+                            data-title="{{ cert.name }}"
+                            data-description="{{ cert.description }}"
+                            data-link="{{ cert.website_url|default:'#' }}"
+                            data-image="{% if cert.image %}{{ cert.image.url }}{% elif cert.external_image_url %}{{ cert.external_image_url }}{% else %}https://dummyimage.com/980x560/f1cf8f/5a2b1f&text={{ cert.name|urlencode }}{% endif %}"
+                        >
+                            {% if cert.image %}
+                                <img src="{{ cert.image.url }}" alt="{{ cert.name }}">
+                            {% elif cert.external_image_url %}
+                                <img src="{{ cert.external_image_url }}" alt="{{ cert.name }}">
+                            {% else %}
+                                <span>{{ cert.name }}</span>
+                            {% endif %}
+                        </button>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endwith %}
+        {% if settings_obj and settings_obj.referral_offer_text %}
+            <p class="muted cert-note">{{ settings_obj.referral_offer_text }}</p>
+        {% endif %}
+    </div>
+</section>
+{% endif %}
+
 <section class="section reveal">
     <div class="container practical-grid">
         <div class="service-card service-card-rich">
             <p class="eyebrow">Infos pratiques</p>
             <h3>Nous trouver a Montpellier</h3>
+              <div class="ornamental-divider" style="margin: 1.2rem 0; text-align: left; opacity: 0.6;" aria-hidden="true">
+                  <svg viewBox="0 0 200 20" width="120" height="12" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="0" y1="10" x2="50" y2="10" stroke="#dbb56b" stroke-width="1"/>
+                      <polygon points="60,10 65,5 70,10 65,15" fill="#dbb56b"/>
+                      <line x1="80" y1="10" x2="130" y2="10" stroke="#dbb56b" stroke-width="1"/>
+                  </svg>
+              </div>
+
             {% if settings_obj and settings_obj.address_line %}<p>{{ settings_obj.address_line }}</p>{% endif %}
             {% if settings_obj and settings_obj.postal_code_city %}<p>{{ settings_obj.postal_code_city }}</p>{% endif %}
             {% if settings_obj and settings_obj.gps_notice %}<p>{{ settings_obj.gps_notice }}</p>{% endif %}
