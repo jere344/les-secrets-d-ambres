@@ -16,7 +16,20 @@ services:
       - ./backups:/app/backups # Dossier pour extraire les backups sur la machine hôte
     restart: unless-stopped
 
+  backup-worker:
+    build: .
+    container_name: secretambre-backup
+    environment:
+      DJANGO_DEBUG: "0"
+      DJANGO_SECRET_KEY: "change-this-secret-key"
+      SQLITE_PATH: "/data/db.sqlite3"
+    volumes:
+      - sqlite_data:/data
+      - media_data:/app/media
+      - ./backups:/app/backups
+    command: python manage.py start_backups
+    restart: unless-stopped
+
 volumes:
   sqlite_data:
-  media_data:
   media_data:
