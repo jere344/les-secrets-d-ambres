@@ -4,13 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{{ meta_title|default:site_settings.brand_name|default:"Les secrets d'ambre" }}{% endblock %}</title>
-    <meta name="description" content="{{ meta_description|default:site_settings.seo_description|default:'Institut de beaute bio a Montpellier, soins orientaux et naturels.' }}">
+    <title>{% block title %}{{ meta_title|default:"Les secrets d'ambre" }}{% endblock %}</title>
+    <meta name="description" content="{{ meta_description|default:'Institut de beaute bio a Montpellier, soins orientaux et naturels.' }}">
     {% if meta_keywords %}<meta name="keywords" content="{{ meta_keywords }}">{% elif site_settings and site_settings.seo_keywords %}<meta name="keywords" content="{{ site_settings.seo_keywords }}">{% endif %}
     <meta name="robots" content="index,follow">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ meta_title|default:site_settings.brand_name|default:"Les secrets d'ambre" }}">
-    <meta property="og:description" content="{{ meta_description|default:site_settings.seo_description|default:'Institut de beaute bio a Montpellier, soins orientaux et naturels.' }}">
+    <meta property="og:title" content="{{ meta_title|default:"Les secrets d'ambre" }}">
+    <meta property="og:description" content="{{ meta_description|default:'Institut de beaute bio a Montpellier, soins orientaux et naturels.' }}">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
       "image": "{% if site_settings.logo %}{{ request.scheme }}://{{ request.get_host }}{{ site_settings.logo.url }}{% endif %}",
       "@id": "{{ request.build_absolute_uri }}",
       "url": "{{ request.scheme }}://{{ request.get_host }}",
-      "telephone": "{{ site_settings.contact_phone|default:site_settings.contact_phone_display|escapejs }}",
+      "telephone": "{% if site_settings.contact_phone %}{{ site_settings.contact_phone|escapejs }}{% elif site_settings.contact_phone_display %}{{ site_settings.contact_phone_display|escapejs }}{% endif %}",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "{{ site_settings.address_line|escapejs }}",
@@ -98,7 +98,7 @@
             <div>
                 <h3>Contact</h3>
                 {% if site_settings and site_settings.contact_phone_display %}
-                    <p><a href="tel:{{ site_settings.contact_phone|default:site_settings.contact_phone_display }}">{{ site_settings.contact_phone_display }}</a></p>
+                    <p><a href="tel:{% if site_settings.contact_phone %}{{ site_settings.contact_phone }}{% elif site_settings.contact_phone_display %}{{ site_settings.contact_phone_display }}{% endif %}">{{ site_settings.contact_phone_display }}</a></p>
                 {% endif %}
                 {% if site_settings and site_settings.address_line %}
                     <p>{{ site_settings.address_line }}</p>
@@ -180,7 +180,7 @@
         "@context": "https://schema.org",
         "@type": "BeautySalon",
         "name": "{{ site_settings.brand_name|default:"Les secrets d'ambre"|escapejs }}",
-        "telephone": "{{ site_settings.contact_phone|default:site_settings.contact_phone_display|escapejs }}",
+        "telephone": "{% if site_settings.contact_phone %}{{ site_settings.contact_phone|escapejs }}{% elif site_settings.contact_phone_display %}{{ site_settings.contact_phone_display|escapejs }}{% endif %}",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "{{ site_settings.address_line|default:''|escapejs }}",
