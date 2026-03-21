@@ -1,0 +1,99 @@
+{
+  "epilation-femme": [],
+  "epilation-homme": [],
+  "epilation-au-fil": [],
+  "soins-visage-bio": [
+    {
+      "label": "Soin tenseur raffermissant Mer Morte",
+      "price_label": "99 EUR",
+      "notes": "Purifiant, equilibrant, raffermissant et anti-rides avec nettoyage de peau, gommage eclaircissant et masque magnetique aux mineraux. Lifting mecanique et massage ayurvedique/japonais pour optimiser la penetration des actifs. Resultat: peau raffermie et detente intense."
+    },
+    {
+      "label": "Soin anti-age prestige Mer Morte (1h30)",
+      "price_label": "135 EUR",
+      "notes": "Nettoyage intense (peeling bio ou gommage), 2 masques anti-age eclaircissant puis liftant, associes a un kobido et un mokabyangha. Resultat: teint lumineux, de froissage/repulpage visible des rides, detente profonde visage/corps/esprit."
+    },
+    {
+      "label": "Soin anti-age liftant mecanique Sweet Palping",
+      "price_label": "65 EUR",
+      "notes": "Palpe roule liftant non electrique avec ventouses faciales sur huile d'argan. Soin jeunesse intense liftant, tonifiant, repulpant et remodelant l'ovale du visage."
+    }
+  ],
+  "black-pearl-peaux-noires": [
+    {
+      "label": "Black Pearl - soin magique",
+      "price_label": "125 EUR",
+      "notes": "Soin visage dedie aux peaux noires et metissees, avec peeling bio, gommage et masque eclaircissant/decapant doux pour unifier le teint et estomper les cernes."
+    }
+  ],
+  "soins-corps-bio": [
+    {
+      "label": "Gommage + massage corps entier",
+      "price_label": "145 EUR",
+      "notes": "Soin combine pour exfolier, assouplir et detendre en profondeur."
+    },
+    {
+      "label": "Gommage + enveloppement + Soin Visage ethnique",
+      "price_label": "189 EUR",
+      "notes": "Rituel complet corps + visage (table legacy)."
+    },
+    {
+      "label": "Tatouage au henne",
+      "price_label": "30 EUR a 60 EUR",
+      "notes": "Motifs personnels ou proposes avec henne naturel; compter 1 EUR/min pour travail sur mesure."
+    },
+    {
+      "label": "Tatouage blanc (poudre + strass)",
+      "price_label": "Sur devis",
+      "notes": "En sus, 50 cts le strass et 80 cts la demi-perle."
+    }
+  ],
+  "minceur-jambes-lourdes": [
+    {
+      "label": "TUI NA drainant (60 min)",
+      "price_label": "95 EUR",
+      "notes": "Massage de medecine chinoise (accupression, palpe roule, percussions, ventouses) pour drainer, decongestionner et soulager les jambes lourdes."
+    },
+    {
+      "label": "TUI NA drainant - cure 5 seances",
+      "price_label": "375 EUR",
+      "notes": "Cure drainage intensive."
+    },
+    {
+      "label": "TUI NA drainant - cure 10 seances",
+      "price_label": "700 EUR",
+      "notes": "Cure drainage intensive."
+    },
+    {
+      "label": "Cure Minceur + TUI NA drainant (120 min)",
+      "price_label": "145 EUR",
+      "notes": "Traitement de choc pour surcharges installees."
+    },
+    {
+      "label": "Cure Minceur + TUI NA - cure 5 seances",
+      "price_label": "650 EUR",
+      "notes": "Version cure longue."
+    }
+  ],
+  "massage-bio": [],
+  "gestion-du-stress": [
+    {
+      "label": "Sophrologie/Coaching - seance individuelle",
+      "price_label": "75 EUR",
+      "notes": "Respiration, relachement corps-esprit, projections positives pour gestion du stress, sommeil, comportements alimentaires, douleur et sevrages."
+    },
+    {
+      "label": "Sophrologie/Coaching - cure 5 seances",
+      "price_label": "290 EUR",
+      "notes": "Accompagnement progressif."
+    }
+  ],
+  "femme-enceinte-jeune-maman": [],
+  "hammam-sauna": [],
+  "rituels-orientaux-spa": [],
+  "onglerie-bio": [],
+  "manucure-pedicure-bio": [],
+  "beaute-du-regard": [],
+  "maquillage-evenementiel": [],
+  "maquillage-permanent": []
+}

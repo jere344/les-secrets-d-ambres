@@ -202,6 +202,33 @@ class Partner(models.Model):
 	def __str__(self):
 		return self.name
 
+class GalleryImage(models.Model):
+	title = models.CharField(max_length=140, blank=True)
+	image = models.ImageField(upload_to="gallery/", blank=True)
+	external_image_url = models.URLField(blank=True)
+	display_order = models.PositiveIntegerField(default=0, verbose_name="Ordre d'affichage")
+	is_published = models.BooleanField(default=True, verbose_name="En ligne (publiée)")
+	is_featured = models.BooleanField(default=False, verbose_name="Mise en avant (Accueil)")
+	created_at = models.DateTimeField(auto_now_add=True)
+
+	objects = PublishedQuerySet.as_manager()
+
+	class Meta:
+		ordering = ["display_order", "-created_at"]
+		verbose_name = "Image galerie"
+		verbose_name_plural = "Images galerie"
+
+	def __str__(self):
+		return self.title or f"Image #{self.id}"
+
+	def image_preview(self):
+		from django.utils.html import format_html
+		url = self.external_image_url if self.external_image_url else (self.image.url if self.image else '')
+		if url:
+			return format_html('<img src="{}" style="max-height: 50px; max-width: 100px; border-radius: 4px;" />', url)
+		return "Pas d'image"
+	image_preview.short_description = 'Aperçu'
+
 
 class Certification(models.Model):
 	name = models.CharField(max_length=140)

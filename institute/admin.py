@@ -5,6 +5,7 @@ from .models import (
 	Category,
 	Certification,
 	HomeFlexibleSection,
+	GalleryImage,
 	Partner,
 	RitualPoint,
 	Service,
@@ -232,6 +233,13 @@ class CertificationAdmin(admin.ModelAdmin):
 		"is_published",
 	)
 
+
+@admin.register(GalleryImage)
+class GalleryImageAdmin(admin.ModelAdmin):
+	list_display = ("__str__", "image_preview", "is_featured", "display_order", "is_published")
+	list_filter = ("is_published", "is_featured")
+	search_fields = ("title",)
+	list_editable = ("is_featured", "display_order", "is_published")
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):

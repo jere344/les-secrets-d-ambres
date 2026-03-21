@@ -1,0 +1,835 @@
+{
+  "epilation-femme": [],
+  "epilation-homme": [],
+  "epilation-au-fil": [],
+  "soins-visage-bio": [
+    {
+      "label": "KOBIDO",
+      "price_label": "79€",
+      "duration_text": "",
+      "notes": "Véritable lifting facial naturel japonais fait de manoeuvres profondes : digipression (Shiatsu), lissages, pétrissages, percussions, vibrations ... sur essence d'argan, rose, agrumes, aloe véra, Neem... selon la nature de votre peau. Si elle est peu réactive, les manoeuvres sont exécutées sur essence de la Mer Morte. Résultat, une circulation sanguine et lymphatique hyper activée, une peau totalement purifiée, des pores resserrés et des rides gommées.",
+      "details_html": ""
+    },
+    {
+      "label": "Peeling Bio Purifiant Profond et éclat du teint",
+      "price_label": "69€",
+      "duration_text": "",
+      "notes": "Extraction en profondeur des cellules mortes, comédons, poils et duvets avec une repousse affinée grâce au miel. Soin désincrustant, liftant, éclaircissant, gommant, repulpant. Résultat : Procure éclat et luminosité au visage, Lift les traits et optimise la pénétration des principes actifs durant plusieurs jours après le soin. Régénère le tissus cutané grâce aux propriétés réparatrices du miel. Barbe féminine diminuée progressivement de 50 à 70%.",
+      "details_html": ""
+    },
+    {
+      "label": "Soin Visage ethnique hydratant ou purifiant",
+      "price_label": "59€",
+      "duration_text": "",
+      "notes": "Elaborés avec des produits NATURELS et ARTISANAUX, extraits de fruits ou céréales (Riz, coco, sésame, agrumes, amandes, cacao ...) ou encore minéraux (argile pure, rhassoul, boues...) pour des résultats de haute qualité sur les peaux les plus sensibles ou intolérantes aux produits industriels, femmes enceintes, jeune public. Résultat : Une peau profondément nettoyée et hydratée sans aucun risque de réaction (attention aux allergies alimentaires aux denrées pré citées).",
+      "details_html": ""
+    },
+    {
+      "label": "Soin Visage anti-âge",
+      "price_label": "95 à 210€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Black Pearl spécifique aux peaux noires & métisses ou hyperpigmentées",
+      "price_label": "125€",
+      "duration_text": "",
+      "notes": "Soin profond Haute Qualité avec peeling bio pour ôter les couches superficielles de celles mortes et atténuer les taches de pigmentation. Puis gommage blanchissant et désincrustant de la mer morte suivi d'un masque blanchissant et décapant de la mer morte. Résultat : une peau douce, purifiée, hydratée. Pigmentation unifiée et éclaircissement du teint. Estompe des cernes sombres.",
+      "details_html": ""
+    },
+    {
+      "label": "Les Ventouses anti-âge repulpantes",
+      "price_label": "30€",
+      "duration_text": "",
+      "notes": "Qui permettent de raffermir la peau et l'oval du visage, estomper les rides, poches et cernes, et relancer la micro circulation sanguine.",
+      "details_html": ""
+    },
+    {
+      "label": "La Luminotherapie",
+      "price_label": "29€",
+      "duration_text": "",
+      "notes": "Pour faire pénétrer les actifs jusque dans l'épiderme, lifter la peau et lisser la peau, resserrer les pores dilatés, assainir les imperfections, régénérer les cellules épithéliales.",
+      "details_html": ""
+    },
+    {
+      "label": "La plaque exfoliante et ultrasons",
+      "price_label": "20€",
+      "duration_text": "",
+      "notes": "Pour nettoyer les pores en profondeur et atténuer les rides.",
+      "details_html": ""
+    },
+    {
+      "label": "La Haute Fréquence",
+      "price_label": "20€",
+      "duration_text": "",
+      "notes": "Un curseur en verre dans lequel un gaz passe et que l'on passe sur un masque ou du sérum pour forcer le passage des principes actifs, apaiser les rougeurs, resserrer les pores, aseptiser la peau. Il est particulièrement recommandé après un Peeling Bio.",
+      "details_html": ""
+    },
+    {
+      "label": "Le Gommage éclaircissant aux minéraux de la Mer Morte",
+      "price_label": "20€",
+      "duration_text": "",
+      "notes": "Pour régénérer vos cellules, éclaircir et unifier votre teint.",
+      "details_html": ""
+    },
+    {
+      "label": "Masque aux principes actifs de la Mer Morte",
+      "price_label": "30€",
+      "duration_text": "",
+      "notes": "Au choix : - Aux boues de la Mer Morte pour peaux acnéiques et sensibles - Anti-âge Magnétique raffermissant - Anti-âge Auto chauffant anti-rides - Anti-âge Illuminateur de teint à l'or 24 carats",
+      "details_html": ""
+    },
+    {
+      "label": "Elixirs précieux avec Luminotherapie",
+      "price_label": "40€",
+      "duration_text": "",
+      "notes": "Perle de sérum anti-âge puissant au Caviar ou à l'Huile Sacrée de Crocodile de Madagascar ou au sang de dragon pour repupler profondément et durablement la peau et les rides en pénétration active avec la luminothérapie. L'Huile de crocodile est également un puissant anti-inflammatoire pour traiter les imperfections et traces. Huile de tamanou de Tahiti. Huile de figue de barbarie...",
+      "details_html": ""
+    },
+    {
+      "label": "Vapozone",
+      "price_label": "15€",
+      "duration_text": "",
+      "notes": "Pour dilater les pores et écolier la peau ainsi mieux préparée aux soins, favorisant ainsi la pénétration des principes actifs.",
+      "details_html": ""
+    },
+    {
+      "label": "Gua sha, rouleaux de quartz rose ou de jade, kansa",
+      "price_label": "10€",
+      "duration_text": "",
+      "notes": "Pour lisser les traits ou stimuler les points énergétiques.",
+      "details_html": ""
+    },
+    {
+      "label": "Soin tenseur raffermissant de la Mer Morte",
+      "price_label": "99€",
+      "duration_text": "",
+      "notes": "Purifiant, équilibrant et raffermissant et antiride avec nettoyage de peau, gommage profond éclaircissant et masque magnétique aux minéraux, lifting mécanique et massage ayurvédique et japonais liftant et énergisant sur les minéraux du masque pour une parfaite pénétration des principes actifs. Résultat : une peau raffermie et une détente intense.",
+      "details_html": ""
+    },
+    {
+      "label": "Soin Anti-âge Prestige de la Mer Morte 1h30",
+      "price_label": "135€",
+      "duration_text": "1h30",
+      "notes": "Fleuron de la recherche cosmétique. Nettoyage de peau intense via un peeling Bio ou un Gommage intense, 2 masques anti-âge éclaircissant puis liftant sur lesquels sont pratiqués un kobido (massage japonais énergisant) et un Mokabyangha (massage ayurvédique) rajeunissant, liftant et relaxant. Ces massages stimulent les points énergétiques et s'articulent autour de pincements, frottements, palpés roulés faciaux aux effets anti-âge intenses. Résultat : Un teint lumineux et éclairci. Défroissage et repulpage intenses des rides visibles dès le premier soin. Détente absolue du visage, corps et de l'esprit.",
+      "details_html": ""
+    },
+    {
+      "label": "Soin Anti-âge Liftant mécanique Sweet Palping",
+      "price_label": "65€",
+      "duration_text": "",
+      "notes": "Palpé roulé liftant non électrique avec des ventouses en verre à piston manuel sur de l'huile d'argon pure. Un soin jeunesse intense liftant et tonifiant, repulpant et remodelant qui regalbe durablement l'ovale du visage, repulpe les rides, oxygène et régénérerère les cellules cutanées du visage. Il éclaircit et illumine le teint pour un effet bonne mine et défroissant immédiat. Dès la première séance, le visage est remodelé, lifté et raffermi. Les rides sont repulpées et l'ovale du visage redessiner et retendu. La peau est tonifiée et assouplie.",
+      "details_html": ""
+    },
+    {
+      "label": "Jeunesse Intense",
+      "price_label": "149€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Traitement Jeunesse Tri-Lumière",
+      "price_label": "70€",
+      "duration_text": "",
+      "notes": "Ridules, rides, et rides profondes visiblement réduite dès la première séance. Amélioration de la circulation sanguine, du teint, et de la l'éclat de la peau. Activation du renouvellement cellulaire et réduction des tâches pigmentaires. Soulagement des douleurs musculaires.",
+      "details_html": ""
+    },
+    {
+      "label": "SOIN VISAGE PRESTIGE ANTI-AGE DE LUXE A L'OR 24 carats ET CAVIAR",
+      "price_label": "229€",
+      "duration_text": "",
+      "notes": "LE Soin Choc qui vous retire 20 ans d'âge et vous laisse un teint éclatant et des rides effacées sur une peau lissée et repeuplée. - Peeling Bio - Masque à l'Or 24 carats - Kobio Ayurvédique sur l'or du masque - Leds Trilumières sur une Perle de Caviar. Lumière verte (régénération Celulaire), bleue (compresse froide tenseur, apaisante et purifiante), rouge (infrarouge pour une pénétration profonde des principes actifs). Sérum et crème anti-âge de la Mer Morte.",
+      "details_html": ""
+    },
+    {
+      "label": "KOBIDO +",
+      "price_label": "125€",
+      "duration_text": "",
+      "notes": "Efficacité multipliée et sublimée par le lifting profond des tissus grâce aux ventouses anti-âge, les principes actifs passent activement dans l'épiderme grâce à l'appareil à Leds trilumières anti-âge. Pour un effet Waouuu + garanti et surprenant de façon instantanée.",
+      "details_html": ""
+    },
+    {
+      "label": "KOBIDO ++",
+      "price_label": "135€",
+      "duration_text": "",
+      "notes": "Soin anti-âge optimum pour rajeunir les peaux matures. Il atténue drastiquement rides et ridules. Peeling Bio, défroissages, pincements, étirement des rides, remodelage de l'oval du visage via le Kobido, le Mukabyangha et le Natural Facelift, completés par les ventouses faciales, les leds trilumières et des actifs puissants pénétrant activement la peau via un courant galvanic ou haute fréquence.",
+      "details_html": ""
+    },
+    {
+      "label": "Peeling Bio + avec Soin purifiant et hydratant",
+      "price_label": "89€",
+      "duration_text": "",
+      "notes": "Peeling Bio + masques 2 masques à base de produits naturels : - Aloé Véra sous haute fréquence pour forcer l'hydratation active, apaiser, purifier et resserrer les pores. - Boue de la mer morte pour peau sensible et acnéique pour purifier en profondeur et apaiser. - beurre et hydrolat de rose pour apaiser, adoucir, aseptiser et rajeunir. Resultat : Une peau nette, purifiée, repeuplée, douce et hydratée. Un teint lumineux.",
+      "details_html": ""
+    },
+    {
+      "label": "Peeling Bio purifiant + avec soin hydratant + anti-âge trilumière",
+      "price_label": "109€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    }
+  ],
+  "black-pearl-peaux-noires": [
+    {
+      "label": "BLACK PEARL : Le soin magique",
+      "price_label": "125€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p>Un soin visage totalement dédié aux peaux noires et métissées. Fragiles, sensibles et sujettes aux marques qui laissent des irrégularités pigmentaires, ce soin exclusif permet des résultats exceptionnels. Fatigue, intempéries (vent, froid) et qualité de l'eau (calcaire et chlore) agressent la peau et lui ôtent sa luminosité. Des cernes se dessinent et le visage s'assombrit dans sa globalité et présente parfois des taches d'hyper pigmentation. Les cellules mortes qui s'accumulent pour le protéger ne laissent pas passer l'hydratation et asphyxient les pores de la peau qui s'assombrit et développe souvent des boutons (excès de sébum emprisonné sous les cellules mortes). Nous utilisons des produits 100% naturels de très haute qualité et issus de la recherche scientifique la plus élaborée.</p><p>- Un gommage profond aux principes actifs de la Mer Morte et aux noyaux d'abricots ramène une luminosité au visage.</p><p>- Un masque décapage en douceur vient finir d'éclaircir et unifier le teint qui s'illumine. La peau est nettoyée et purifiée en profondeur. Elle retrouve sa souplesse et est prête à recevoir toute l'hydratation nécessaire. Le sang circule et oxygène les celules épitéliales, apportant un effet coup d'éclat et jeunesse. Les manoeuvres manuelles du massage ayurvédique pendant toute la pause du masque éclaircit les cernes les plus installées qui disparaissent. Les tâches sombres s'atténuent et votre visage retrouve un éclat de jeune fille.</p>"
+    },
+    {
+      "label": "MAQUILLAGE JOUR",
+      "price_label": "49€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p>Pour parfaire les résultats du soin visage et repartir plus belle que jamais. Spécifique aux peaux noires, il apporte toute la lumière nécessaire à sublimer la beauté noire. Difficile de trouver un institut maitrisant l'art subtil et spécifique de maquiller une peau noire pourtant magnifique quand on sait la mettre en valeur. Ici, nous en prenons le plus grand soin et savon la magnifier.</p><p>Possibilité également de bénéficier d'un maquillage soir, scène, et d'un cours d'auto maquillage. Consulter les tarifs sur l'onglet maquillage.</p>"
+    },
+    {
+      "label": "SOIN DU CORPS",
+      "price_label": "Gommage 39€ / Enveloppement 39€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p>La peau noire, fine et dotée d'un film protecteur plus fragile, a tendance à s'assécher et provoquer un effet peau de crocodile. Une solution est le gommage aux sels de la Mer Morte ôte les cellules mortes responsables de cet état et nourrit la peau en profondeur. Un enveloppement au beurre de karité chaud vient parfaire ce résultat de façon durable. Pour  un effet désincrustant et douceur extrême, une séance cd Hammam est préconisée avant le soin. (se référer aux tarifs des onglets soin du corps et autour du Hammam)</p>"
+    }
+  ],
+  "soins-corps-bio": [
+    {
+      "label": "Gommages au choix",
+      "price_label": "39€",
+      "duration_text": "",
+      "notes": "Sel de la mer morte et huiles précieuses, pierre d’Alun, pois chiches sésame, coque d’argan et argile rouge, céréales berbères, cacao et sucre, saké chaud, Trois agrumes, totum d’olives, Savon noir, café, cristaux d’alun, miel et gelée royale, cristaux de roses et coques d’argan, pulpe de coco, et, escales éphémères (Mexicaine à la mandarine pétillante ou scandinave aux feuilles vertes et écorces de boulot)",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\">Sel de la mer morte et huiles précieuses, pierre d’Alun, pois chiches sésame, coque d’argan et argile rouge, céréales berbères, cacao et sucre, saké chaud, Trois agrumes, totum d’olives, Savon noir, café, cristaux d’alun, miel et gelée royale, cristaux de roses et coques d’argan, pulpe de coco, et, escales éphémères (<span style=\"font-weight: 700 !important;\">Mexicaine</span> à la mandarine pétillante ou <span style=\"font-weight: 700 !important;\">scandinave</span> aux feuilles vertes et écorces de boulot)</p>"
+    },
+    {
+      "label": "Enveloppements au choix",
+      "price_label": "49€",
+      "duration_text": "",
+      "notes": "Boue de la mer morte, Rassoul, karités chauds, kryo minceur et jambes légères, Thé vert, beurre et crème de coco, totem d'olive, escales éphémères vers des senteurs exotiques.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\">Boue de la mer morte, Rassoul, karités chauds, kryo minceur et jambes légères, Thé vert, beurre et crème de coco, totem d'olive, escales éphémères vers des senteurs exotiques.</p>"
+    },
+    {
+      "label": "Gommage + enveloppement",
+      "price_label": "85€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Gommage + massage corps entier",
+      "price_label": "145€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Gommage + enveloppement +  Soin Visage ethnique",
+      "price_label": "189€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Gommage + enveloppement + massage corps entier",
+      "price_label": "189€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Gommage + enveloppement + massage corps entier  -  189€<br/></span></span></p>"
+    },
+    {
+      "label": "Bronzage Naturel au cacao et henné",
+      "price_label": "59€",
+      "duration_text": "",
+      "notes": "Soin de la peau aux produits naturels pour un joli teint hâlé et naturel visage et corps durant 1 semaine. Application à l'éponge pour une couleur caramel qui fonce au fil des passages et sans stimulation des mélanocytes.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\">Soin de la peau aux produits naturels pour un joli teint hâlé et naturel visage et corps durant 1 semaine. Application à l'éponge pour une couleur caramel qui fonce au fil des passages et sans stimulation des mélanocytes.</p>"
+    },
+    {
+      "label": "Tatouage au henné",
+      "price_label": "30 à 60€",
+      "duration_text": "",
+      "notes": "de motifs personnels ou proposés, avec du henné naturel. Compter 30 à 60€ pour un travail simple sur la main. Compter 1€ la minute.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Tatouage au henné</span></span> de motifs personnels ou proposés, avec du henné naturel. Compter 30 à 60€ pour un travail simple sur la main. Compter 1€ la minute.</p>"
+    },
+    {
+      "label": "Tatouage Blanc à la poudre de diament et strass",
+      "price_label": "Sur Devis",
+      "duration_text": "",
+      "notes": "En sus, 50 cts le strass et 80 cts la 1/2 perle.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffd85b;\"><span style=\"font-weight: 700 !important;\">Tatouage Blanc à la poudre de diament et strass</span></span></p><p style=\"line-height: 16.799999237060547px;\">En sus, 50 cts le strass et 80 cts la 1/2 perle.</p>"
+    }
+  ],
+  "minceur-jambes-lourdes": [
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "65€ / 1 séance",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Palpé Roulé Sweet Palping</span></p><p style=\"line-height: 16.799999237060547px;\">                    Palpé roulé semi manuel qui défibrose les tissus,                </p><p style=\"line-height: 16.799999237060547px;\">                    diminue le volume et gomme                </p>"
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "280€ / 5 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "490€ / 10 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Cure Minceur complète Optiminceur fermeté",
+      "price_label": "85€ la séance",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "1 zone - 65€ / 1 séance",
+      "duration_text": "",
+      "notes": "Tarifs pour 1 zone.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px; text-align: left;\"><em><span style=\"color: #ffffff;\">Des ventouses à piston utilisées de façon manuelles pour casser les masses adipeuses et la cellulite, drainer et laisser la peau                    lisse.</span></em></p><p style=\"line-height: 16.799999237060547px; text-align: left;\"><em><span style=\"color: #ffffff;\">Résultat : Jusqu'à 9 cm de tour de taille ou de hanche en moins, effet peau d'orange gommé.</span></em></p>"
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "2 zones - 99 € / 1 séance",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "1 zone - 299€ / 5 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "2 zones - 499€ / 5 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "1 zone - 579€ / 10 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "2 zones - 869€ / 10 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Cure Minceur complète Optiminceur fermeté",
+      "price_label": "95€ la séance",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Cure Minceur complète Optiminceur fermeté",
+      "price_label": "450€ / 5 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Cure Minceur complète Optiminceur fermeté",
+      "price_label": "840€/ 10 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "65€ / 1 séance",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px; text-align: left;\"><span style=\"font-style: italic !important;\"><span style=\"color: #ffffff;\">Pour les personnes qui travaillent debout, les grossesses difficiles et les immobilisations dues à de                    longs voyages ou à des périodes d'alitement prolongé.</span></span></p><p style=\"line-height: 16.799999237060547px; text-align: left;\"><span style=\"font-style: italic !important;\"><span style=\"color: #ffffff;\">Ventouses à piston utilisées de façon manuelles pour drainer les tissus engorgés et redynamiser la                    circulation sanguine et lymphatique</span></span><span style=\"font-style: italic !important;\"><span style=\"color: #ffffff;\">.</span></span></p>"
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "299€ / 5 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping",
+      "price_label": "579€ / 10 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping + traitement intensif",
+      "price_label": "85€ / 1 séance",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Palpé Roulé Sweet Palping + traitement intensif</span></p><p style=\"line-height: 16.799999237060547px; text-align: left;\"><span style=\"font-style: italic !important;\"><span style=\"color: #ffffff;\">Les manoeuvres aux ventouses + un gommage aux sels de la mer morte qui stimulent la micro circulation et                    un enveloppement froid de kryothérapie pour prolonger et intensifier l'effet jambes légères</span></span><span style=\"font-style: italic !important;\"><span style=\"color: #ffffff;\">.</span></span></p>"
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping + traitement intensif",
+      "price_label": "380€ / 5 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Palpé Roulé Sweet Palping + traitement intensif",
+      "price_label": "580€ / 10 séances",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    }
+  ],
+  "massage-bio": [],
+  "gestion-du-stress": [
+    {
+      "label": "Sophrologie ou Coaching personnel ou professionnel : Séance individuelle",
+      "price_label": "75€ /1 séance 290€ / 5 séances",
+      "duration_text": "",
+      "notes": "Basée sur la respiration, l’esprit et le corps se relâchent, s’harmonisent et les projections mentales permettent de gérer le négatif, les stress, les troubles du sommeil ou alimentaires, la douleur ou le tabagisme.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\">Basée sur la respiration, l’esprit et le corps se relâchent, s’harmonisent et les projections mentales permettent de gérer le négatif, les stress, les troubles du sommeil ou alimentaires, la douleur ou le tabagisme.</p>"
+    }
+  ],
+  "femme-enceinte-jeune-maman": [
+    {
+      "label": "Massage drainant des jambes",
+      "price_label": "59€",
+      "duration_text": "(30')",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Massage décontractant cocooning + Soin visage ethnique",
+      "price_label": "138€",
+      "duration_text": "(100')",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Epilation maillot Intégral",
+      "price_label": "45€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Gommage, enveloppement et massage",
+      "price_label": "169€",
+      "duration_text": "(120')",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Shantala",
+      "price_label": "49€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "femme enceinte et jeune maman",
+      "price_label": "399€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    }
+  ],
+  "hammam-sauna": [
+    {
+      "label": "La séance solo de 45 minutes de Hammam ou sauna ou sauna IR",
+      "price_label": "49€",
+      "duration_text": "30 à 45 mn",
+      "notes": "",
+      "details_html": "<p><span color=\"#FFCC00\" style=\"color: #ffcc00;\"><span style=\"caret-color: #ffcc00;\"><b>La séance solo de 45 minutes de Hammam ou sauna ou sauna IR</b></span></span></p><p>30 à 45 mn</p>"
+    },
+    {
+      "label": "La séance duo de 45 minutes de Hammam ou sauna IR",
+      "price_label": "45€",
+      "duration_text": "30 à 45 mn. tarif par personne.",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">La séance duo de 45 minutes de Hammam ou sauna IR</span></span></p><p>30 à 45 mn. tarif par personne. <strong><span style=\"color: #f3c212;\">45€</span></strong></p>"
+    },
+    {
+      "label": "La séance trio de 45 minutes de Hammam ou sauna IR",
+      "price_label": "40€",
+      "duration_text": "30 à 45 mn. tarif par personne.",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">La séance trio de 45 minutes de Hammam ou sauna IR</span></span></p><p>30 à 45 mn. tarif par personne. <strong><span style=\"color: #f3c212;\"> 40€</span></strong></p>"
+    },
+    {
+      "label": "Pureté",
+      "price_label": "89€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Pureté</span></span></p><p>Hammam ou sauna Infra Rouge + gommage corps</p>"
+    },
+    {
+      "label": "Zen",
+      "price_label": "125€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Zen</span></span></p><p>Hammam ou sauna Infra Rouge + gommage + enveloppement</p>"
+    },
+    {
+      "label": "Evasion",
+      "price_label": "189€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Evasion</span></span></p><p>Hammam + gommage + enveloppement + soin visage ethnique</p>"
+    },
+    {
+      "label": "Douceur d'orient",
+      "price_label": "155€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Douceur d'orient</span></span></p><p>Hammam + gommage + massage 30 min</p>"
+    },
+    {
+      "label": "Les secrets d'Argania",
+      "price_label": "149€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Les secrets d'Argania</span></span></p><p>Hammam + massage 60 min</p>"
+    },
+    {
+      "label": "Reine de Saba",
+      "price_label": "199€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Reine de Saba</span></span></p><p>Hammam + gommage + enveloppement + massage 30 min</p>"
+    },
+    {
+      "label": "Les Secrets d’Ambre",
+      "price_label": "249€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Les Secrets d’Ambre</span></span></p><p>Hammam + gommage + enveloppement + massage 60 mn</p>"
+    },
+    {
+      "label": "Les secrets de Cléopatre",
+      "price_label": "169€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Les secrets de Cléopatre</span></span></p><p>Suna IR + Séance Minceur Palpé roulé + enveloppement Minceur</p>"
+    },
+    {
+      "label": "Rituel des secrets de la Mer Morte",
+      "price_label": "279€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p><span style=\"font-weight: 700 !important;\"><span style=\"color: #ffcc00;\">Rituel des secrets de la Mer Morte</span></span></p><p>Hammam ou sauna + gommage aux sels de la mer morte + enveloppement aux boues de la mer morte + soin visage aux produits de la mer morte + KOBIDO</p>"
+    }
+  ],
+  "rituels-orientaux-spa": [],
+  "onglerie-bio": [
+    {
+      "label": "MANUCURE RUSSE OU FRANCAISE",
+      "price_label": "39€",
+      "duration_text": "",
+      "notes": "La différence entre les 2 manucure réside dans la repousse et le traitement des cuticules",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><strong><span style=\"color: #ffcc00;\">MANUCURE RUSSE OU FRANCAISE</span></strong></p><p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">La différence entre les 2 manucure réside dans la repousse et le traitement des cuticules</span></p><p style=\"line-height: 16.799999237060547px;\">                        Repousse des cuticules</p><p style=\"line-height: 16.799999237060547px;\">                        Exfoliation des ongles</p><p style=\"line-height: 16.799999237060547px;\">                        Limage et mise en forme des ongles</p><p style=\"line-height: 16.799999237060547px;\">                        Polissage des ongles</p><p style=\"line-height: 16.799999237060547px;\">                        Application d’une base transparente</p><p style=\"line-height: 16.799999237060547px;\">                        Application d’une huile pour cuticules</p>"
+    },
+    {
+      "label": "VERNIS TRADITIONNEL : POSE (sans manucure)",
+      "price_label": "15€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "VERNIS TRADITIONNEL : DEPOSE",
+      "price_label": "10€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><strong><span style=\"color: #f3c212;\">VERNIS TRADITIONNEL : DEPOSE</span></strong></p>"
+    },
+    {
+      "label": "VERNIS SEMI PERMANENT : POSE avec Manucure",
+      "price_label": "35€",
+      "duration_text": "",
+      "notes": "Pour une tenue parfaite sur plusieurs semaines sans abimer l’ongle.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffd95c;\"><strong>VERNIS SEMI PERMANENT : POSE avec Manucure</strong></span></p><p style=\"line-height: 16.799999237060547px;\">                        Option French +15€</p>"
+    },
+    {
+      "label": "VERNIS SEMI PERMANENT : DEPOSE EN DOUCEUR",
+      "price_label": "20€",
+      "duration_text": "",
+      "notes": "Vernis semi permanent posé chez nous uniquement. Pour les vernis posés ailleurs, compter 15€ de plus, variable selon la difficulté de dépose.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\"><strong>VERNIS SEMI PERMANENT</strong> : <strong>DEPOSE</strong> EN DOUCEUR</span></p><p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Vernis semi permanent posé chez nous uniquement. Pour les vernis posés ailleurs, compter 15€ de plus, variable selon la difficulté de dépose.</span></p>"
+    }
+  ],
+  "manucure-pedicure-bio": [
+    {
+      "label": "BEAUTE DES PIEDS D'ICI",
+      "price_label": "59€",
+      "duration_text": "",
+      "notes": "Repousse des cuticules, limage et polissage des ongles, ponçage des peaux mortes.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">BEAUTE DES PIEDS D'ICI</span></p><p style=\"line-height: 16.799999237060547px;\">                        Repousse des cuticules, limage et polissage des ongles, ponçage des peaux mortes.</p>"
+    },
+    {
+      "label": "BEAUTE ET SOIN DES PIEDS D'AILLEURS",
+      "price_label": "89€",
+      "duration_text": "",
+      "notes": "Repousse des cuticules, limage et polissage des ongles, ponçage des peaux mortes, bain bouillonnant aux sels de la mer morte, gommage aux sels de la mer morte, enveloppement au beurre de karité chaud et massage des pieds avec réflexologie plantaire ou ayurvédique aux bols kansu jusqu’aux genoux.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">BEAUTE ET SOIN DES PIEDS D'AILLEURS</span></p><p style=\"line-height: 16.799999237060547px;\">                        Repousse des cuticules, limage et polissage des ongles, ponçage des peaux mortes, bain bouillonnant aux sels de la mer morte, gommage aux sels de la mer morte, enveloppement au beurre de karité chaud et massage des pieds avec réflexologie plantaire ou ayurvédique aux bols kansu jusqu’aux genoux.</p>"
+    }
+  ],
+  "beaute-du-regard": [
+    {
+      "label": "Cure soin liftant du regard",
+      "price_label": "199€",
+      "duration_text": "1 séance",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\">Manoeuvres liftantes manuelles et avec des ventouses douces, des huiles et sérums spécifiques.</p>"
+    },
+    {
+      "label": "Cure soin liftant du regard",
+      "price_label": "55€",
+      "duration_text": "5 séances",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\">Manoeuvres liftantes manuelles et avec des ventouses douces, des huiles et sérums spécifiques.</p>"
+    },
+    {
+      "label": "Epilation et restructuration à la cire",
+      "price_label": "25€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Epilation à la pince à épiler",
+      "price_label": "35€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Epilation et restructuration au fil",
+      "price_label": "35€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Epilation et restructuration au miel",
+      "price_label": "29€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Teinture des sourcils traditionnelle",
+      "price_label": "31€",
+      "duration_text": "",
+      "notes": "Des traits prononcés pour une belle harmonie et un regard sublimé durant 3 à 4 semaines.",
+      "details_html": ""
+    },
+    {
+      "label": "Teinture des sourcils Longue Durée",
+      "price_label": "39€",
+      "duration_text": "",
+      "notes": "Des traits prononcés pour une belle harmonie et un regard sublimé durant 5 à 6 semaines.",
+      "details_html": ""
+    },
+    {
+      "label": "Intense Brow",
+      "price_label": "49€",
+      "duration_text": "6 semaines",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Teinture Sourcils Intense Brow + Restructuration cire et pince",
+      "price_label": "59€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Browlift",
+      "price_label": "49€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Forfait Browlift + Teinture Longue durée",
+      "price_label": "79€",
+      "duration_text": "6 à 8 semaines",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Densification & symétrie des sourcils",
+      "price_label": "280€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Création de sourcils",
+      "price_label": "350€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Queue de sourcils effet lifting",
+      "price_label": "190€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Retouche",
+      "price_label": "89€",
+      "duration_text": "1 mois",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Extension Mix Cil à cil et Volume Russe : POSE",
+      "price_label": "79€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Extension Mix Cil à cil et Volume Russe : DÉPOSE",
+      "price_label": "19€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Extension Mix Cil à cil et Volume Russe : COMBLAGE",
+      "price_label": "45€",
+      "duration_text": "3 sem",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "FAUX CILS D'1 SOIREE",
+      "price_label": "25€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Lashlift (Rehaussement) + Teinture traditionnelle",
+      "price_label": "59€",
+      "duration_text": "4 sem",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Lashfiller : Rehaussement LD + Soin allongeant et épaississant",
+      "price_label": "89€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Lashfiller : Rehauss LD + Soin allongeant et ép Cure",
+      "price_label": "257€",
+      "duration_text": "3 séances",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Teinture des cils traditionnelle",
+      "price_label": "33€",
+      "duration_text": "",
+      "notes": "Des traits prononcés pour une belle harmonie et un regard sublimé durant 3 à 4 semaines.",
+      "details_html": ""
+    },
+    {
+      "label": "Teinture des cils Longue Durée",
+      "price_label": "49€",
+      "duration_text": "6 sem",
+      "notes": "Des traits prononcés pour une belle harmonie et un regard sublimé durant 5 à 6 semaines.",
+      "details_html": ""
+    },
+    {
+      "label": "Mascara Semi Permanent",
+      "price_label": "49€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "Epilation Sourcils + Browlift + Lashlift + Teinture cils et sourcils",
+      "price_label": "157€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    },
+    {
+      "label": "MicroBlading promo Montpellier",
+      "price_label": "189€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": ""
+    }
+  ],
+  "maquillage-evenementiel": [
+    {
+      "label": "Maquillage Flash",
+      "price_label": "29€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Maquillage Flash</span></p>"
+    },
+    {
+      "label": "Maquillage Jour",
+      "price_label": "49€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Maquillage Jour</span></p><p style=\"line-height: 16.799999237060547px;\"><span style=\"font-size: 14px; color: #f2c111;\">Maquillage soir  </span></p><p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #f2c111;\"><span style=\"font-size: 14px;\">Maquillage Oriental</span> </span>                                                 </p>"
+    },
+    {
+      "label": "Maquillage de scène",
+      "price_label": "99€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Maquillage de scène</span></p>"
+    },
+    {
+      "label": "Cours d’auto maquillage jour",
+      "price_label": "89€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Cours d’auto maquillage jour</span></p>"
+    },
+    {
+      "label": "Cours d’auto maquillage jour et soir",
+      "price_label": "110€",
+      "duration_text": "",
+      "notes": "",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Cours d’auto maquillage jour et soir</span></p>"
+    },
+    {
+      "label": "Programme Jeunes de 8 à 16 ans",
+      "price_label": "165€",
+      "duration_text": "",
+      "notes": "Soin visage purifiant avec conseils d'entretien des peaux jeunes à problème, initiation à l’auto maquillage léger et à la manucure discrète, épilation demi jambe et sourcils.",
+      "details_html": "<p style=\"line-height: 16.799999237060547px;\"><span style=\"color: #ffcc00;\">Programme Jeunes de 8 à 16 ans</span></p><p style=\"line-height: 16.799999237060547px;\">Soin visage purifiant avec conseils d'entretien des peaux jeunes à problème, initiation à l’auto maquillage léger et à la manucure discrète, épilation demi jambe et sourcils.</p>"
+    }
+  ],
+  "maquillage-permanent": []
+}

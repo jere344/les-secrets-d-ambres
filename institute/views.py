@@ -11,7 +11,8 @@ from .models import (
 	Category,
 	Certification,
 	HomeFlexibleSection,
-	Partner,
+	GalleryImage,
+    Partner,
 	RitualPoint,
 	Service,
 	SiteSettings,
@@ -91,6 +92,11 @@ class HomeView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
 		context['latest_posts'] = BlogPost.objects.all()[:3]
+		# Only fetch featured images for the home page, fallback to 8 latest if none are featured yet
+		featured_images = GalleryImage.objects.published().filter(is_featured=True).order_by('display_order', '-created_at')
+		if not featured_images.exists():
+			featured_images = GalleryImage.objects.published().order_by('display_order', '-created_at')[:8]
+		context['latest_gallery_images'] = featured_images
 		settings_obj = SiteSettings.get_solo()
 		tariff_prefetch = Prefetch(
 			"tariffs",
@@ -302,4 +308,16 @@ class BlogDetailView(DetailView):
         context["meta_title"] = f"{self.object.title} - Les secrets d'ambre"
         if self.object.summary:
             context["meta_description"] = self.object.summary
+        return context
+
+
+class GalleryListView(ListView):
+    model = GalleryImage
+    template_name = 'institute/gallery_list.html'
+    context_object_name = 'images'
+    def get_queryset(self):
+        return super().get_queryset().published()
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['meta_title'] = 'Galerie Photos - Les secrets d\'ambre'
         return context

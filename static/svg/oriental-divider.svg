@@ -1,0 +1,12 @@
+<svg viewBox="0 0 300 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Elegant oriental divider -->
+  <path d="M150 2 C 153 10, 162 12, 175 12 C 210 12, 250 6, 298 12 C 250 15, 210 14, 175 14 C 162 14, 153 22, 150 22 C 147 22, 138 14, 125 14 C 90 14, 50 15, 2 12 C 50 6, 90 12, 125 12 C 138 12, 147 10, 150 2 Z" fill="#dbb56b" opacity="0.85"/>
+  <!-- Center star/diamond -->
+  <path d="M150 6 L 153 12 L 150 18 L 147 12 Z" fill="#280f0e"/>
+  <!-- Side accents -->
+  <circle cx="50" cy="12" r="2" fill="#dbb56b"/>
+  <circle cx="250" cy="12" r="2" fill="#dbb56b"/>
+  <!-- Small swirls -->
+  <path d="M110 8 C 100 8, 95 12, 85 10" fill="none" stroke="#dbb56b" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M190 8 C 200 8, 205 12, 215 10" fill="none" stroke="#dbb56b" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+</svg>

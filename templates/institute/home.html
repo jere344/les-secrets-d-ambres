@@ -131,29 +131,6 @@
 </section>
 
 <section class="section reveal">
-    <div class="container">
-        <div class="section-head">
-            <p class="eyebrow">L'experience institut</p>
-            <h2>Tout ce qu'une cliente moderne attend</h2>
-        </div>
-        <div class="services-grid">
-            <article class="service-card service-card-rich">
-                <h3>Diagnostic et personnalisation</h3>
-                <p>Chaque parcours est adapte a la peau, au ressenti et au besoin du moment. La hierarchie categorie -> soin -> tarifs simplifie la decision.</p>
-            </article>
-            <article class="service-card service-card-rich">
-                <h3>Reservation fluide</h3>
-                <p>Prise de rendez-vous directe avec bouton flottant, contact telephone permanent et informations pratiques accessibles en un clic.</p>
-            </article>
-            <article class="service-card service-card-rich">
-                <h3>Ambiance orientale contemporaine</h3>
-                <p>Direction artistique premium, motifs texturaux, couleurs chaudes et transitions douces pour une experience visuelle immersive.</p>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="section reveal">
     <div class="container ritual-flow">
         {% for point in ritual_points %}
             <article class="ritual-line {% if forloop.counter0|divisibleby:2 %}left{% else %}right{% endif %}">
@@ -183,7 +160,7 @@
 
 <section class="section reveal">
     <div class="container">
-        <div class="section-head text-center" style="text-align: center; margin-bottom: 2.5rem;">
+        <div class="section-head">
             <p class="eyebrow">Le Journal</p>
             <h2>Actualités et conseils</h2>
         </div>
@@ -231,10 +208,16 @@
             <h2>Ambiance et savoir-faire en images</h2>
         </div>
         <div class="legacy-gallery">
-            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/ia290007d220e8ba4/version/1386884562/image.jpg" alt="Epilation et soins">
-            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/i23ba30c7955d1483/version/1386884451/image.jpg" alt="Institut beaute Montpellier">
-            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/icdb2745799a359be/version/1386884503/image.jpg" alt="Soins corps et visage">
-            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=564x10000:format=jpg/path/s3935d23759db2cb4/image/ifd64d20cb9ccb4f9/version/1386853254/hammam-sauna-montpellier-pour-un-moment-de-plaisir-seul-e-ou-%C3%A0-deux.jpg" alt="Hammam et sauna">
+            {% for img in latest_gallery_images %}
+                {% if img.external_image_url %}
+                    <img src="{{ img.external_image_url }}" alt="{{ img.title|default:'Galerie institut' }}">
+                {% elif img.image %}
+                    <img src="{{ img.image.url }}" alt="{{ img.title|default:'Galerie institut' }}">
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="cta-wrap" style="margin-top: 2rem; text-align: center;">
+            <a href="{% url 'gallery_list' %}" class="btn">Voir toute la galerie</a>
         </div>
     </div>
 </section>
@@ -378,7 +361,7 @@
         <div class="service-card service-card-rich">
             <p class="eyebrow">Infos pratiques</p>
             <h3>Nous trouver a Montpellier</h3>
-              <div class="ornamental-divider" style="margin: 1.2rem 0; text-align: left; opacity: 0.6;" aria-hidden="true">
+              <div class="ornamental-divider" style="opacity: 0.6;" aria-hidden="true">
                   <svg viewBox="0 0 200 20" width="120" height="12" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
                       <line x1="0" y1="10" x2="50" y2="10" stroke="#dbb56b" stroke-width="1"/>
                       <polygon points="60,10 65,5 70,10 65,15" fill="#dbb56b"/>

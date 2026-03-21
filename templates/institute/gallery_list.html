@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ meta_title|default:"Galerie Photos - Les secrets d'ambre" }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container page-hero-grid">
+        <div class="hero-copy">
+            <h1 class="reveal fade-up">Galerie Institut</h1>
+            <p class="lead reveal fade-up" style="animation-delay: 0.1s;">
+                Découvrez nos cabines et notre espace détente en images.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="page-body">
+    <div class="container reveal fade-up">
+        <div class="legacy-gallery" style="margin-top: 1rem; margin-bottom: 4rem;">
+            {% for img in images %}
+                {% if img.external_image_url %}
+                    <img src="{{ img.external_image_url }}" alt="{{ img.title|default:'Galerie photo' }}">
+                {% elif img.image %}
+                    <img src="{{ img.image.url }}" alt="{{ img.title|default:'Galerie photo' }}">
+                {% endif %}
+            {% empty %}
+                <p>Aucune photo dans la galerie pour le moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

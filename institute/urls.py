@@ -5,6 +5,7 @@ from .views import (
     BlogDetailView,
     CategoryDetailView,
     HomeView,
+    GalleryListView,
     ServiceDetailView,
     StandalonePageDetailView,
 )
@@ -18,6 +19,7 @@ urlpatterns = [
         name="service-detail",
     ),
     path("page/<slug:slug>/", StandalonePageDetailView.as_view(), name="page-detail"),
+    path("galerie-photos/", GalleryListView.as_view(), name="gallery_list"),
     path("blog/", BlogListView.as_view(), name="blog_list"),
     path("blog/<slug:slug>/", BlogDetailView.as_view(), name="blog_detail"),
 ]

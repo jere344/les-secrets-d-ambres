@@ -9,6 +9,14 @@
     --sand: #d8c1a2;
     --shadow-xl: 0 24px 54px rgba(12, 4, 4, 0.42);
     --radius: 18px;
+    --font-content: "Amiri", serif;
+    --font-title-big: "Estonia", cursive;
+    --font-title-small: "El Messiri", sans-serif;
+    --font-accent: "Cinzel Decorative", serif;
+    --font-title-big-scale: 1.98;
+    --font-title-big-line-height: 0.8;
+    --font-title-small-scale: 1;
+    --font-title-small-line-height: 1.2;
 }
 * {
     box-sizing: border-box;
@@ -20,7 +28,7 @@ body {
     overflow-x: hidden;
 }
 body {
-    font-family: "Amiri", serif;
+    font-family: var(--font-content);
     color: var(--cream);
     background:
         radial-gradient(circle at 8% 10%, rgba(219, 181, 107, 0.15), transparent 38%),
@@ -28,6 +36,11 @@ body {
         radial-gradient(circle at 85% 90%, rgba(219, 181, 107, 0.12), transparent 34%),
         linear-gradient(160deg, var(--red-brown-950) 0%, var(--red-brown-900) 50%, #220f13 100%);
     line-height: 1.65;
+}
+.estonia-regular {
+    font-family: var(--font-title-big);
+    font-weight: 400;
+    font-style: normal;
 }
 main,
 .site-header,
@@ -86,6 +99,9 @@ img {
     padding: 0 max(1.2rem, 4vw);
     margin: 0 auto;
 }
+.container-header {
+    width: min(1860px, 100%);
+}
 .site-header {
     position: sticky;
     top: 0;
@@ -94,7 +110,7 @@ img {
     background-size: 40px 40px;
     background-position: 0 0, 20px 20px;
     border-bottom: 2px solid rgba(219, 181, 107, 0.4);
-    z-index: 40;
+    z-index: 1000;
     transform: translateY(-14px);
     opacity: 0;
     transition: background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
@@ -128,7 +144,8 @@ img {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    max-width: 70%;
+    flex-shrink: 1;
+    min-width: 0;
 }
 .brand-text {
     display: grid;
@@ -143,9 +160,10 @@ img {
     border: 1px solid rgba(219, 181, 107, 0.45);
 }
 .brand-title {
-    font-family: "El Messiri", sans-serif;
+    font-family: var(--font-title-big);
     color: var(--gold);
-    font-size: 1.4rem;
+    font-size: calc(1.4rem * var(--font-title-big-scale));
+    line-height: var(--font-title-big-line-height);
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -155,24 +173,126 @@ img {
 }
 .site-nav {
     display: flex;
-    gap: 1.2rem;
-    flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
 }
-.site-nav > a {
+.site-nav-scroll {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.site-nav-close-wrap {
+    display: none;
+}
+.site-nav-overlay {
+    display: none;
+}
+.site-nav-scroll > a,
+.nav-dropdown-toggle {
     color: #f7eee3;
     font-size: 1.05rem;
+    font-family: var(--font-content);
     font-weight: 500;
     pointer-events: auto;
     transition: color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
 }
-.site-nav > a:hover {
+.site-nav-scroll > a:hover,
+.nav-dropdown-toggle:hover {
     transform: translateY(-1px);
+    color: var(--gold);
 }
-.site-nav > a.btn-booking,
-.site-nav > a.btn-booking:hover {
+.nav-dropdown {
+    position: relative;
+}
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(29, 10, 10, 0.98);
+    border: 1px solid rgba(219, 181, 107, 0.3);
+    border-top: 3px solid var(--gold);
+    border-radius: 8px;
+    padding: 0.8rem 0;
+    min-width: 280px;
+    display: none;
+    opacity: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 50;
+    pointer-events: none;
+}
+.nav-dropdown::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    z-index: 10;
+}
+.nav-dropdown.is-open .nav-dropdown-menu,
+.nav-dropdown:hover .nav-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+@media (hover: none) {
+    .nav-dropdown:hover .nav-dropdown-menu {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .nav-dropdown.is-open .nav-dropdown-menu {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+.nav-dropdown-menu a {
+    color: #f7eee3;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    display: block;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-align: center;
+}
+.nav-dropdown-menu a:hover {
+    background: rgba(219, 181, 107, 0.1);
+    color: var(--gold-light);
+}
+.site-nav-scroll > a.btn-booking,
+.site-nav-scroll > a.btn-booking:hover {
     color: #2d130f;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+.pages-dropdown {
+    display: none;
+}
+.desktop-only-page {
+    display: inline-flex;
+    white-space: nowrap;
+}
+@media (max-width: 1280px) {
+    .pages-dropdown {
+        display: block;
+    }
+    .desktop-only-page {
+        display: none !important;
+    }
 }
 .menu-button {
     display: none;
@@ -256,7 +376,7 @@ img {
 }
 .hero-category-nav > a {
     color: var(--gold-light);
-    font-family: "El Messiri", sans-serif;
+    font-family: var(--font-title-small);
     font-size: 1.05rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -284,24 +404,24 @@ img {
     gap: 1.7rem;
     align-items: center;
 }
-.hero h1,
-.page-hero h1,
-.section-head h2,
 .site-footer h2,
 .site-footer h3,
 .card h3,
 .service-card h3,
 .page-card h3,
 .care-card h3 {
-    font-family: "Amiri", serif;
+    font-family: var(--font-title-small);
+    font-size: calc(1em * var(--font-title-small-scale));
+    line-height: var(--font-title-small-line-height);
     letter-spacing: 0.01em;
     margin: 0;
+    color: var(--gold);
 }
 .hero h1,
 .page-hero h1 {
-    font-family: "El Messiri", sans-serif;
-    font-size: clamp(2.25rem, 5vw, 3.8rem);
-    line-height: 1.15;
+    font-family: var(--font-title-big);
+    font-size: calc(clamp(2.25rem, 5vw, 3.8rem) * var(--font-title-big-scale));
+    line-height: var(--font-title-big-line-height);
     margin: 0.35rem 0 1rem;
     color: var(--gold);
     text-shadow: 0 4px 12px rgba(0,0,0,0.6);
@@ -313,9 +433,8 @@ img {
     font-size: 0.76rem;
     letter-spacing: 0.12em;
     color: var(--gold-light);
-    border: 1px solid rgba(219, 181, 107, 0.35);
-    border-radius: 6px;
-    padding: 0.24rem 0.76rem;
+    border: none;
+    padding: 0;
 }
 .lead {
     margin: 0 0 1.2rem;
@@ -475,10 +594,15 @@ img {
     );
 }
 .section-head {
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 .section-head h2 {
-    font-size: clamp(1.75rem, 4vw, 2.55rem);
+    margin: 0;
+    font-family: var(--font-title-big);
+    font-size: calc(clamp(1.75rem, 4vw, 2.55rem) * var(--font-title-big-scale));
+    line-height: var(--font-title-big-line-height);
 }
 .ritual-flow {
     display: flex;
@@ -539,9 +663,10 @@ img {
 }
 .ritual-line h3 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: calc(1.8rem * var(--font-title-big-scale));
+    line-height: var(--font-title-big-line-height);
     color: var(--gold-light);
-    font-family: "El Messiri", sans-serif;
+    font-family: var(--font-title-big);
 }
 .ritual-line p {
     margin: 0.5rem 0 0;
@@ -598,4 +723,8 @@ img {
 }
 .card-image-wrap img {
     border-radius: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+

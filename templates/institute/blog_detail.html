@@ -15,14 +15,6 @@
     </div>
 </section>
 
-{% if post.image %}
-<section class="section pt-0 reveal">
-    <div class="container blog-hero-image">
-        <img src="{{ post.image.url }}" alt="{{ post.title }}">
-    </div>
-</section>
-{% endif %}
-
 <section class="section reveal">
     <div class="container blog-content rich-text">
         {{ post.content|safe }}

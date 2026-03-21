@@ -1,8 +1,17 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load .env using python-dotenv if present
+# Keeps existing environment variables (does not override)
+env_path = BASE_DIR / ".env"
+if env_path.exists():
+    try:
+        load_dotenv(dotenv_path=str(env_path), override=False)
+    except Exception:
+        pass
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-change-me")
 DEBUG = os.getenv("DJANGO_DEBUG", "1") == "1"
 

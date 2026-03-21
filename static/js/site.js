@@ -1,5 +1,8 @@
 const menuButton = document.querySelector("[data-menu-toggle]");
+const menuButtonsClose = document.querySelectorAll("[data-menu-close]");
+const menuOverlay = document.querySelector("[data-menu-overlay]");
 const menu = document.querySelector("[data-menu]");
+const dropdowns = document.querySelectorAll("[data-dropdown]");
 const scrollTopButton = document.querySelector("[data-scroll-top]");
 const siteHeader = document.querySelector(".site-header");
 
@@ -15,11 +18,42 @@ const toggleHeaderState = () => {
     }
 };
 
+const closeMenu = () => {
+    if (menu) menu.classList.remove("is-open");
+    if (menuOverlay) menuOverlay.classList.remove("is-active");
+    document.body.style.overflow = '';
+};
+
 if (menuButton && menu) {
     menuButton.addEventListener("click", () => {
-        menu.classList.toggle("is-open");
+        menu.classList.add("is-open");
+        if (menuOverlay) menuOverlay.classList.add("is-active");
+        document.body.style.overflow = 'hidden';
     });
 }
+
+menuButtonsClose.forEach(btn => {
+    btn.addEventListener("click", closeMenu);
+});
+
+if (menuOverlay) {
+    menuOverlay.addEventListener("click", closeMenu);
+}
+
+dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', (e) => {
+            // Only acts as a click toggle on mobile/touch, desktop handles via CSS hover
+            if (window.innerWidth <= 980) {
+                e.preventDefault();
+                dropdown.classList.toggle('is-open');
+                const isExpanded = dropdown.classList.contains('is-open');
+                toggle.setAttribute('aria-expanded', isExpanded);
+            }
+        });
+    }
+});
 
 if (scrollTopButton) {
     const toggleScrollButton = () => {
