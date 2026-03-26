@@ -1,0 +1,133 @@
+/* Partner Section Luxury Styles */
+
+.partner-section-luxury {
+    padding: 4rem 0 5rem 0;
+    position: relative;
+}
+
+.partner-band-wrapper {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 0;
+    background: linear-gradient(to right, transparent, rgba(219, 181, 107, 0.6), transparent);
+}
+
+.partner-marquee-rich {
+    position: relative;
+    background: 
+        linear-gradient(135deg, rgba(91, 31, 27, 0.98), rgba(58, 18, 16, 0.95), rgba(91, 31, 27, 0.98)),
+        url('../svg/arabesque-pattern-2.svg') repeat center center;
+    background-blend-mode: overlay;
+    background-size: auto, 150px;
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    padding: 2.5rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6), inset 0 0 30px rgba(0,0,0,0.7);
+}
+
+.partner-marquee-rich::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    border-top: 1px dashed rgba(219, 181, 107, 0.4);
+    border-bottom: 1px dashed rgba(219, 181, 107, 0.4);
+    pointer-events: none;
+}
+
+.marquee-content-rich {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    animation: marquee-rich 35s linear infinite;
+    flex-shrink: 0;
+}
+
+.marquee-item-rich {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4.5rem;
+    font-family: var(--font-accent);
+    font-size: 1.6rem;
+    color: var(--gold-light) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    flex-shrink: 0;
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
+    text-decoration: none;
+}
+
+.marquee-item-rich:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(219, 181, 107, 0.8);
+    color: var(--gold) !important;
+}
+
+.marquee-item-rich-span {
+    color: var(--gold); 
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8); 
+    font-weight: bold;
+}
+
+.marquee-item-rich img {
+    height: 65px;
+    width: auto;
+    max-width: none;
+    border-radius: 0;
+    object-fit: contain;
+    /* Proper gold filter instead of black: equivalent to #dbb56b */
+    filter: brightness(0) invert(72%) sepia(35%) saturate(769%) hue-rotate(349deg) brightness(98%) contrast(92%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.marquee-item-rich:hover img {
+    filter: drop-shadow(0 6px 12px rgba(219, 181, 107, 0.3)) brightness(0) invert(83%) sepia(21%) saturate(996%) hue-rotate(345deg) brightness(101%) contrast(96%);
+}
+
+.marquee-separator {
+    color: rgba(219, 181, 107, 0.6);
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse-star 4s ease-in-out infinite;
+}
+
+.partner-ornament {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    height: 50px;
+    z-index: 2;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+}
+
+.partner-ornament-top {
+    top: -46px; /* Moved up to connect perfectly with the border */
+}
+
+.partner-ornament-bottom {
+    bottom: -46px; /* Moved down to connect perfectly with the border */
+    transform: translateX(-50%) scaleY(-1);
+}
+
+@keyframes marquee-rich {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-star {
+    0%, 100% { opacity: 0.5; transform: scale(0.9) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.1) rotate(45deg); color: var(--gold); }
+}

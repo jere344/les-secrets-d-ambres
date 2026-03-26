@@ -66,7 +66,8 @@
     box-shadow: 0 8px 32px rgba(28, 9, 9, 0.6);
 }
 .service-card-rich,
-.page-card-rich {
+.page-card-rich,
+.map-frame-wrap {
     border: 1px solid rgba(219, 181, 107, 0.4);
     border-radius: 4px 48px 4px 48px;
     background: 
@@ -76,6 +77,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 0 6px rgba(219, 181, 107, 0.1);
     padding: 2rem 1.5rem !important;
     text-align: center;
+    background-position: center;
 }
 .service-card-rich::before {
     content: "✦";
@@ -283,16 +285,7 @@
     border: 0;
     border-radius: calc(var(--radius) - 4px);
 }
-.map-frame-wrap {
-    padding: 1.5rem;
-    border: 1px solid rgba(219, 181, 107, 0.4);
-    border-radius: 6px 48px 6px 48px;
-    background: linear-gradient(135deg, rgba(40, 15, 14, 0.9), rgba(33, 12, 13, 0.95)), url('../svg/arabesque-pattern.svg') repeat;
-    background-blend-mode: overlay;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 5px rgba(219, 181, 107, 0.15);
-    position: relative;
-    overflow: hidden;
-}
+
 .map-frame-wrap iframe {
     width: 100%;
     height: 100%;
@@ -301,18 +294,7 @@
     border-radius: 4px 38px 4px 38px;
     display: block;
 }
-.map-frame-wrap::before, .map-frame-wrap::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: url('../svg/arabesque-pattern.svg') no-repeat center;
-    background-size: contain;
-    opacity: 0.15;
-    pointer-events: none;
-}
-.map-frame-wrap::before { top: 5px; left: 5px; transform: rotate(0deg); }
-.map-frame-wrap::after { bottom: 5px; right: 5px; transform: rotate(180deg); }
+
 .care-card-head {
     display: flex;
     justify-content: space-between;
@@ -723,15 +705,14 @@ a.floating-booking:hover,
     transform: scale(1.1);
 }
 
-/* --- Luxury Refinements --- */
-.service-card-rich, .card-luxury { position: relative; overflow: hidden; transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease; }
-.service-card-rich:hover, .card-luxury:hover {
+.service-card-rich, .card-luxury, .map-frame-wrap { position: relative; overflow: hidden; transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease; }
+.service-card-rich:hover, .card-luxury:hover, .map-frame-wrap:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 0 6px rgba(219, 181, 107, 0.25);
     border-color: rgba(219, 181, 107, 0.7);
 }
-.service-card-rich::after, .card-luxury::after { content: ''; position: absolute; bottom: 0; right: 0; width: 120px; height: 120px; background: url('../svg/arabesque-pattern.svg') no-repeat bottom right; background-size: contain; opacity: 0.15; transition: opacity 0.4s ease; transform: rotate(-15deg) translate(20px, 20px); pointer-events: none; }
-.service-card-rich:hover::after, .card-luxury:hover::after { opacity: 0.6; transform: rotate(0deg) translate(0, 0); }
+.service-card-rich::after, .card-luxury::after, .map-frame-wrap::after { content: ''; position: absolute; bottom: 0; right: 0; width: 120px; height: 120px; background: url('../svg/arabesque-pattern.svg') no-repeat bottom right; background-size: contain; opacity: 0.15; transition: opacity 0.4s ease; transform: rotate(-15deg) translate(20px, 20px); pointer-events: none; }
+.service-card-rich:hover::after, .card-luxury:hover::after, .map-frame-wrap:hover::after { opacity: 0.6; transform: rotate(0deg) translate(0, 0); }
 .btn { text-transform: uppercase; letter-spacing: 1px; }
 
 .section-head p.eyebrow { 

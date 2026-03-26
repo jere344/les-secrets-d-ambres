@@ -1,0 +1,138 @@
+﻿/* Luxury Testimonial Styles - Gold Speech Bubble with Oriental Watermark */
+
+.testimonial-card-luxury {
+    position: relative;
+    margin: 0 0 15px 0; /* Space for the tail */
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f1cb83 0%, #ddb063 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 16px 28px rgba(8, 3, 3, 0.28);
+    color: #4f2019;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    z-index: 1;
+}
+
+.testimonial-card-luxury:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 36px rgba(8, 3, 3, 0.45);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Background tail/pointer of the bubble */
+.testimonial-card-luxury::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 40px;
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+    background: #ddb063;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    z-index: 0;
+    transition: border-color 0.3s ease;
+}
+
+.testimonial-card-luxury:hover::after {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Inner wrapper */
+.testimonial-card-content {
+    position: relative;
+    padding: 1.8rem 1.5rem 1.5rem;
+    overflow: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    z-index: 2;
+}
+
+/* Base watermark for the oriental crest */
+.testimonial-card-content::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 140px;
+    height: 140px;
+    background-image: url('../svg/testimonial-crest.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    filter: brightness(0);
+    opacity: 0.15;
+    z-index: 1;
+    transform: rotate(15deg);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.testimonial-card-luxury:hover .testimonial-card-content::before {
+    transform: rotate(0deg) scale(1.1);
+    opacity: 0.25;
+}
+
+/* Elegant Quote Mark */
+.testimonial-quote-mark {
+    position: absolute;
+    top: -5px;
+    left: 15px;
+    font-family: var(--font-title-big);
+    font-size: 5.5rem;
+    color: #4f2019;
+    opacity: 0.15;
+    line-height: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.testimonial-stars-luxury {
+    display: flex;
+    gap: 0.35rem;
+    color: rgba(79, 32, 25, 0.3);
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-stars-luxury .is-filled {
+    color: #4f2019;
+}
+
+.testimonial-text-luxury {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    font-style: italic;
+    color: #4f2019;
+    flex-grow: 1;
+}
+
+.testimonial-author-luxury {
+    font-weight: 700;
+    font-family: var(--font-title-small);
+    font-size: 1.15rem;
+    color: #3b1611;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    border-top: 1px dashed rgba(79, 32, 25, 0.2);
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author-luxury::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 2px;
+    background: #4f2019;
+    margin-right: 10px;
+    opacity: 0.4;
+}

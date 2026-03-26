@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.admin import SummernoteModelAdmin, SummernoteModelAdminMixin, SummernoteInlineModelAdmin
 
 from .models import (
 	Category,
@@ -97,7 +97,8 @@ class ServiceInline(admin.TabularInline):
 	show_change_link = True
 
 
-class TariffInline(admin.StackedInline):
+class TariffInline(SummernoteInlineModelAdmin, admin.StackedInline):
+	summernote_fields = ("details_html",)
 	model = Tariff
 	extra = 1
 	show_change_link = True

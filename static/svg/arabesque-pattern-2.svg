@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <g fill="none" stroke="#dbb56b" stroke-width="1.2" opacity="0.35">
+        <!-- Interlocking Moroccan-style 8-pointed star pattern -->
+        <path d="M60 10 L72 32 L95 32 L78 52 L88 78 L60 62 L32 78 L42 52 L25 32 L48 32 Z" />
+        <path d="M0 -50 L12 -28 L35 -28 L18 -8 L28 18 L0 2 L-28 18 L-18 -8 L-35 -28 L-12 -28 Z" />
+        <path d="M120 -50 L132 -28 L155 -28 L138 -8 L148 18 L120 2 L92 18 L102 -8 L85 -28 L108 -28 Z" />
+        <path d="M0 70 L12 92 L35 92 L18 112 L28 138 L0 122 L-28 138 L-18 112 L-35 92 L-12 92 Z" />
+        <path d="M120 70 L132 92 L155 92 L138 112 L148 138 L120 122 L92 138 L102 112 L85 92 L108 92 Z" />
+        <!-- Diamond intersections -->
+        <path d="M30 0 L60 30 L90 0 M120 30 L90 60 L120 90 M90 120 L60 90 L30 120 M0 90 L30 60 L0 30" />
+        <!-- Concentric rings for detail -->
+        <circle cx="60" cy="60" r="24" stroke-dasharray="4, 4" />
+        <circle cx="60" cy="60" r="10" />
+        <circle cx="0" cy="0" r="24" stroke-dasharray="4, 4" />
+        <circle cx="0" cy="0" r="10" />
+        <circle cx="120" cy="0" r="24" stroke-dasharray="4, 4" />
+        <circle cx="120" cy="0" r="10" />
+        <circle cx="0" cy="120" r="24" stroke-dasharray="4, 4" />
+        <circle cx="0" cy="120" r="10" />
+        <circle cx="120" cy="120" r="24" stroke-dasharray="4, 4" />
+        <circle cx="120" cy="120" r="10" />
+    </g>
+</svg>

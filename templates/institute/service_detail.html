@@ -55,7 +55,8 @@
                     {% endif %}
                     {% if tariff.details_html %}
                         <div class="rich-text tariff-rich">{{ tariff.details_html|safe }}</div>
-                    {% elif tariff.notes %}
+                    {% endif %}
+                    {% if tariff.notes %}
                         <p>{{ tariff.notes|linebreaksbr }}</p>
                     {% endif %}
                 </article>
